@@ -206,7 +206,7 @@
 /***  4.0 - MAIN***/        
     /* ! 4.1 - MAIN Accueil */
         /*About us*/
-            .txtContainer{
+            .Us_Container{
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -216,7 +216,7 @@
                 background-color: whitesmoke;
             }
 
-            .txtContainer article{
+            .Us_Container article{
                 display: flex;
                 flex-direction: column;
                 justify-content:center;
@@ -226,19 +226,18 @@
                 text-align: center;
             }
 
-            .txtContainer h2{
+            .Us_Container h2{
                 padding-bottom: 0.5em;
                 text-align: center;
             }
 
-            .txtContainer img{
+            .Us_Container img{
                 width: 50%;
             }
         
         /*Bloc Prestation*/
 
-        .presta{
-            
+        .presta{ 
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
