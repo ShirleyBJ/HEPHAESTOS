@@ -1,0 +1,631 @@
+/**
+* !CSS TABLE OF CONTENTS
+* * 1.0 - BODY
+* * 2.0 - NAV
+* * 3.0 - HEADER
+* * 4.0 - MAIN
+    * *4.1 - MAIN Accueil
+    * *4.2 - MAIN Prestations
+    * *4.3 - MAIN Rénovation
+    * *4.4 - Main Contact
+    * *4.5 - Main Compte
+* * 5.0 - ASIDE
+* * 6.0 - FOOTER
+*/
+
+/*! 1.0 - BODY*/
+    body{
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        background-color: black;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .logoMid{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        height:50%;
+        font-size: 2em;
+        text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+        background-image:url(img/baseLogo.png);
+        background-position: center;
+        background-color:black;
+        background-size:contain;
+        background-repeat: no-repeat;
+        
+    }
+
+/*! 2.0 - NAV*/
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        color: whitesmoke;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: flex-end;
+        align-items:center;
+    }
+
+    li a{
+        margin:0.3em;
+        font-size: 1.40em;
+        color: whitesmoke;
+        text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+        text-decoration: none;
+    }
+
+    nav li:hover{
+        padding: 0.5em 0;
+        box-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
+    }
+
+/* ! 3.0 - HEADER*/
+
+    .headerPage1{ 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:650px;
+        background-image:url(img/bugatti.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .headerPage2{ 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:650px;
+        background-image:url(img/auto.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .headerPage3{ 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:650px;
+        background-image:url(img/reno.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .headerPage4{ 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:650px;
+        background-image:url(img/ctc.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .headerPage5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:650px;
+        background-image:url(img/YCAR.jpg);
+        background-position: center;
+        background-size: cover;   
+    }
+
+    header h1 {
+        text-align: center;
+        font-size: 3.75em;
+        color: honeydew;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
+    }
+
+    header p{
+        text-align: center;
+        font-size: 3em;
+        color: honeydew;  
+        text-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
+    }
+
+    .bold{
+        font-weight: bold;
+    }
+
+
+/***  4.0 - MAIN***/        
+    /* ! 4.1 - MAIN Accueil */
+        /*About us*/
+            .txtContainer{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-align: justify;
+                width: 100%;
+                background-color: whitesmoke;
+            }
+
+            .txtContainer article{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                align-items: center;
+                padding: 2em;
+                width: 50%;
+                text-align: center;
+            }
+
+            .txtContainer h2{
+                padding-bottom: 0.5em;
+                text-align: center;
+            }
+
+            .txtContainer img{
+                width: 50%;
+            }
+
+        /*Bloc Prestation*/
+
+        .presta{
+            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color:black;
+        }
+
+        .fix, .repair, .sell, .renew{ 
+            margin: 1.5em;
+            padding: 0.5em;
+            width: 35%;
+            text-align: center;
+            background-color: whitesmoke;
+            border: 2px solid black;
+        }
+
+        .presta h2{
+            padding: 1em;
+            font-size: 1.8em;
+        }
+
+        .presta p{
+            margin: 1em;
+            text-align: justify;
+        }
+        .presta img{
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+        }
+
+        .button{
+            padding: 1em;
+            margin: 3em 10em;
+            border-radius: 62px 62px 62px 62px;
+            border: 2px solid black;
+        }
+
+        .presta a{
+            font-size: 1.15em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Image rénovations*/
+
+        .picReno{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            padding: 3.125em;
+            align-items: center;
+            background-color: black;
+        }
+
+        .picReno img{
+            width: 400px;
+            height: 450px;
+            border: 2px solid silver;
+        }
+
+        /* Block newsletter*/
+
+        .newsletter{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 0.6em;  
+            font-size: 1.25em;
+            color: #767676;
+            background-color: black;
+            border: 2px solid #767676;
+        }
+
+        .textContainerNews{
+            width: 40%;
+            text-align:justify;
+        }
+
+        .newsletter form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 1.25em;
+            width: 40%;
+            text-align: center;
+        }
+
+        .newsletter input{
+            padding:1.9em;
+            width: 100%;
+            background-color: black;
+        }
+
+    /* ! 4.2 - MAIN Prestations*/
+        .mainPage2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .mainPage2 li{
+            padding: 25px;
+            list-style-type: square;
+        }
+
+        .prestaPage2 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding:1.5em;
+            background-color: black;
+        }
+
+        .prestaPage2 img{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%; 
+        }
+
+        .container1, .container2, .container3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5em;
+            padding: 1.25em;
+            width: 30%;
+            background-color: whitesmoke;
+            border: 2px solid black;
+        }
+
+        .round{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .rounder{
+            
+            padding: 0.9em;
+            margin: 0.8em;
+            width: 30%;
+            text-align: center;
+            color: whitesmoke;
+            background-color: black;
+            border:2px solid black;
+            border-radius: 50%;
+            
+        }
+
+    /* ! 4.3 - MAIN Rénovation*/
+        .mainPage3{
+            display: flex;
+            flex-direction: column;
+            padding: 3.125em;
+            background-color: black;
+        }
+
+        .blockPortfolio{
+            display: flex;
+            flex-direction: row;
+            padding-bottom:3em;
+            background-color: black;
+        }
+
+        .portfolio{
+            margin: 2em;
+            width: 30%;
+            background-color: whitesmoke;
+            border: 1px solid silver;
+        }
+
+        .portfolio img{
+            width:100%;
+            height: 350px;
+        }
+
+        .portfolio p{
+            padding:0.8em;
+            margin:0;
+            text-align: justify;
+        }
+
+        .firstName {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        /* Block commentaire*/
+
+        .comment {
+            text-align: center;
+            padding-top: 0.9em;
+            background-color: whitesmoke;   
+        }
+
+        .orgComment{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .orgComment img{
+            width: 50px;
+            height: 50px;
+        }
+
+        .cmt{
+            width: 35%;
+            padding:1.875em;
+            text-align: center;
+        }
+
+        /*BLOCK Nos Projet*/
+
+        .picProjet{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .picProjet img{
+            margin: 0.9em;
+            height: 500px;
+            width: 500px;
+            border: 2px solid silver;
+        }
+
+    /* ! 4.4 - MAIN Contact*/
+        .ctcCustom{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0.8em;
+            width: 100%;
+            background-color: black;
+        }
+
+        .arrangeL{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width:40%;
+        }
+
+        .arrangeR{
+            display: flex;
+            flex-direction: column;
+            width:60%;
+        }  
+
+        .decoration{
+        margin: 0 3.125em;
+        border-bottom: 5px solid red;
+        }
+
+        .ctcCustom h2{
+            color: whitesmoke;
+        }
+
+        .ctcSocialMedia {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-top: 1px solid silver;
+        }
+
+        .ctcSocialMedia img {
+            margin: 0.9em;
+            width: 50px;
+            height: 50px;
+        }
+
+        .ctcInfo{
+            display: flex;
+            flex-direction: column;
+            margin: 3.125em;
+            padding: 1.5625em;
+            background-color: whitesmoke;
+            border-radius: 10%;
+        }
+
+        .ctcInfo address{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .ctcInfo p,a{
+            padding: 0.6em;
+            margin:0.3em;
+            color: black;
+        }
+
+        .mapCenter{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .pageCtcForm{
+            display: flex;
+            justify-content: center;
+            margin: 2.5em;
+        }
+
+        .pageCtcForm form{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            padding: 3.125em;
+            width: 100%;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            border-radius: 10%;
+        }
+
+        .size{
+            width:50px;
+            height:50px
+        }
+
+        .inline{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .pageCtcForm input,label{
+            margin: 0.6em;
+            padding:0.6em;
+            width: 100%;
+        }
+
+        .pageCtcForm img{
+            width: 90px;
+            height: 50px;
+        }
+
+    /* ! 4.5 - Mon compte*/
+    /*TODO: Coder page*/
+
+
+/*! 5.0 - ASIDE*/
+
+    aside {
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+        padding:3.125em;
+        margin:0;
+        background-color:black;
+    }
+
+    .nouveaute, .evenement{
+        padding-bottom: 0.9em;
+        background-color: whitesmoke;
+        border: 2px solid black;
+        border-radius: 10%;
+    }
+
+    aside h2{
+        margin: 0 6.25em;
+        padding: 1.5em;
+        padding-bottom: 0.6em;
+        text-align: center;
+        border-bottom: 2px solid black;
+    }
+
+    aside li{
+        margin: 0.6em;
+    }
+
+/* ! 6.0 - FOOTER */
+
+    footer{
+        color: whitesmoke;
+        padding: 0.9em;
+        color: whitesmoke;
+        background-color: black;
+        border-top: 2px solid silver;
+    }
+
+    footer li{
+        padding: 0.9em;
+        font-size: 1.25em;
+    }
+
+    footer a {
+        font-size: 1em;
+    }
+
+    footer a:hover {
+        padding: 0.9em 1em;
+        font-weight: bold;
+        border: none;
+        box-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
+    }
+
+    footer address {
+    margin: 1em;
+    font-size: 1.25em;
+    }
+
+    .custom{
+        padding-bottom: 0.8em;
+        font-size: 2em;
+        border-bottom: 2px solid whitesmoke;
+    }
+
+    .footerContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: baseline;
+    }
+
+    .footerSocialMedia img{
+        padding:0.9em;
+    }
+
+    .footerLink, .footerServices, .footerContact, .footerAboutUs {
+        padding: 1.25em;
+        width: 25%;
+        text-align: center;
+    }
+
+    .footerAboutUs{
+        padding-top: 1.5em;
+    }
+
+    .copyright{
+        font-size: 1.15em;
+        text-align: center;
+    }
+
+    .footerContact a{
+        padding: 0.9em ;
+        color: whitesmoke;
+    }

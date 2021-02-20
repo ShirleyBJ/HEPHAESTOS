@@ -1,0 +1,62 @@
+    <!--Mobile Nav-->
+    <nav id="mobile_menu">
+    <a href="index.html"><img src="img/logoHephaestos.png" alt="Logo du garage Hephaestos" width="200" height="80" ></a>
+        <details><summary> Menu </summary>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="page2.html">Automobile</a></li>
+                <li><a href="page3.html">Rénovation</a></li>
+                <li><a href="page4.html">Contact</a></li>
+                <li><a href="page5.html">Mon Compte</a></li>
+            </ul>
+        </details>
+    </nav>
+
+
+ @media screen and (min-width:800px){
+        #mobile_menu {
+            visibility:hidden;
+            height: 0;
+        }
+    }
+
+    @media screen and (max-width:800px){
+        #desktop_menu {
+            visibility:hidden;
+            height: 0;
+        }
+
+        #mobile_menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #mobile_menu details{
+            width: 100%;
+            box-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
+        }
+
+        #mobile_menu summary{
+            padding: 0.5em;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+        }
+
+        #mobile_menu summary::-webkit-details-marker {
+            display: none
+        }
+
+        #mobile_menu ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #mobile_menu li{
+            margin: 0.25em;
+        }
+    }
