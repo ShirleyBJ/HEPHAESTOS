@@ -497,6 +497,10 @@
             background-color: black;
         }
 
+        .img_map{
+            width: 330px;
+        }
+
         .pageCtcForm{
             display: flex;
             justify-content: center;
