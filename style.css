@@ -735,6 +735,61 @@
     .ctc_form img{
         width: 90px;
         height: 50px;
+        margin: 0.5em;
+    }
+
+    @media screen and (max-width:800px){
+        .ctc_custom{
+            flex-direction: column;
+            width: auto;
+        }
+
+        .block_left{
+            width:auto;
+        }
+    
+        .block_right{
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            width:auto;
+        }  
+
+        .ctc_info{
+            margin: 1em;
+            padding: 1em;
+        }
+
+        .ctc_info p,a{
+            margin: 0;
+            text-align: center;
+        }
+
+        .ctc_socialMedia img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .img_map{
+            width: 200px;
+        }
+
+        .ctc_form form{
+            padding: 1em;
+            width: auto;
+        }
+
+        .ctc_form img{
+            width: 60px;
+            height: 30px;
+            margin: 0.1em;
+        }
+
+        .ctc_form input,label{
+            margin: 0.3em;
+            padding:0.3em;
+            width: auto;
+        }
     }
 
     /* ! 4.5 - Mon compte*/

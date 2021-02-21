@@ -13,7 +13,7 @@
 
 <body>
     <!--NAV-->
-    <nav>
+    <nav id="desktop_menu">
         <a href="index.html"><img class="logo_nav" src="img/logoHephaestos.png" alt="Logo du garage Hephaestos"></a>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
@@ -23,6 +23,19 @@
                 <li><a href="page5.html"><img class="picto_nav" src="img/userBlack.png" alt="picto utilisateur"></a></li>
             </ul>
         </nav>
+    <!--Mobile Nav-->
+    <nav id="mobile_menu">
+        <a href="index.html"><img src="img/logoHephaestos.png" alt="Logo du garage Hephaestos" width="200" height="80"></a>
+        <details><summary> Menu </summary>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="page2.html">Automobile</a></li>
+                <li><a href="page3.html">Rénovation</a></li>
+                <li><a href="page4.html">Contact</a></li>
+                <li><a href="page5.html">Mon Compte</a></li>
+            </ul>
+        </details>
+    </nav>
     <!--HEADER-->
     <header class="header_ctc">
         <h1>Contactez nous</h1>
@@ -75,7 +88,7 @@
         </div>
     </main>
 <!--FOOTER-->
-    <footer>
+    <footer id="desktop_footer">
         <div class="footer_container">
                 <div class="footer_aboutUs">
                     <h2 class="custom">Hephaestos</h2>
@@ -124,6 +137,38 @@
             </div>
         </div>
         <p class="copyright"> © Copyright 2021- Hephaestos by Shirley</p>
+    </footer>
+    <!--FOOTER-MOBILE-->
+    <footer id="mobile_footer">
+        <div class="footer_link">
+            <details><summary> Menu </summary>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page2.html">Automobile</a></li>
+                    <li><a href="page3.html">Rénovation</a></li>
+                    <li><a href="page4.html">Contact</a></li>
+                    <li><a href="page5.html">Mon Compte</a></li>
+                </ul>
+            </details>
+        </div>
+        <div class="footer_services">
+            <details>
+                <summary>Le Garage</summary>
+                <ul>
+                    <li> Plan du site</li>
+                    <li> Vie privée</li>
+                    <li> Mentions légales</li>
+                    <li> Condition d'utilisation</li>
+                </ul>
+            </details>
+        </div>
+        <div class="footer_socialMedia">
+            <img src="img/facebook.svg" alt="picto facebook">
+            <img src="img/instagram.svg" alt="picto instagram">
+            <img src="img/twitter.svg" alt="picto twitter">
+            <img src="img/pinterest.svg" alt="picto pinterest">
+        </div>
+        <p class="copyright_mobile"> © Copyright 2021- Hephaestos by Shirley</p> 
     </footer>
 </body>
 </html>
