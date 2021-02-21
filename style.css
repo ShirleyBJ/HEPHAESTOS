@@ -45,6 +45,7 @@
         .logo_interSection{
             padding: 0;
             font-size: 1.75em;
+            text-align: center;
         }
     }
 
@@ -467,6 +468,33 @@
         border:2px solid black;
         border-radius: 50%;
         
+    }
+
+    @media screen and (max-width:800px){
+        .presta_auto{
+            flex-direction: column;
+            padding: 0;
+        }
+        .presta_auto img{
+            width:150px;
+            height: 150px;
+        }
+
+        .main_auto li{
+            padding: 0;
+        }
+
+        .container1, .container2, .container3 {
+            margin: 1.5em;
+            padding: 0;
+            width: auto;
+            text-align: center;
+        }
+
+        .rounder{
+            margin:0.1em;
+            padding: 0.2em;
+        }
     }
 
     /* ! 4.3 - MAIN Rénovation*/
