@@ -18,6 +18,7 @@
         margin: 0 auto;
         padding: 0;
         width: 100%;
+        background-color: black;
     }
 
     ul {
@@ -403,6 +404,7 @@
     @media screen and (max-width:800px){
         .newsletter{
             flex-direction: column;
+            margin: 0.5em;
         }
 
         .newsletter_txt, .newsletter form , .newsletter input {
@@ -507,7 +509,6 @@
 
     .blockPortfolio{
         display: flex;
-        flex-direction: row;
         padding-bottom:3em;
         background-color: black;
     }
@@ -535,6 +536,24 @@
         font-size: 1.5em;
     }
 
+    @media screen and (max-width:800px){
+        .blockPortfolio{
+            flex-direction: column;
+            align-items: center;
+        }
+        .portfolio{
+            width:auto;
+            margin:0.5em;
+        }
+        .main_reno{
+            padding:0;
+        }
+
+        .portfolio img{
+            height: 200px;
+        }
+    }
+
     /* Block commentaire*/
 
     .comment {
@@ -560,13 +579,27 @@
         text-align: center;
     }
 
+    @media screen and (max-width:800px){
+        .org_comment{
+            flex-direction: column;
+        }
+
+        .cmt{
+            width: auto;
+            padding: 1em;
+        }
+
+        .comment{
+            margin:0 1em;
+        }
+    }
+
     /*BLOCK Nos Projet*/
 
     .img_projet{
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         justify-content: space-evenly;
-        flex-wrap: wrap;
     }
 
     .img_projet img{
@@ -574,6 +607,19 @@
         height: 500px;
         width: 500px;
         border: 2px solid silver;
+    }
+
+    @media screen and (max-width:800px){
+        .img_projet{
+            flex-flow: column wrap;
+            align-items: center;
+        }
+
+        .img_projet img{
+            margin:0.3em;
+            width: 200px;
+            height: 200px;
+        }
     }
 
     /* ! 4.4 - MAIN Contact*/
