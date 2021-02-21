@@ -277,8 +277,7 @@
     }
 
     .fix, .repair, .sell, .renew{ 
-        margin: 1.5em;
-        padding: 0.5em;
+        margin: 2em;
         width: 35%;
         text-align: center;
         background-color: whitesmoke;
@@ -333,7 +332,7 @@
         }
 
         .button {
-            margin: 0;
+            margin:1em;
         }    
     }
 
@@ -358,6 +357,7 @@
         .img_reno{
             flex-flow: column wrap;
             align-items: center;
+            padding:0
         }
 
         .img_reno img{
@@ -710,6 +710,10 @@
 
         .aside_nouveaute, .aside_evenement{
             margin-bottom: 0.9em;
+        }
+
+        aside ul{
+            padding:0;
         }
     }
 
