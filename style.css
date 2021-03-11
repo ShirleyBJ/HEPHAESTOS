@@ -107,10 +107,6 @@
             width: 80%;
             box-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
         }
-        
-        #mobile_menu summary::-webkit-details-marker {
-            display: none;
-        }
 
         #mobile_menu summary{
             padding: 0.5em;
@@ -946,10 +942,6 @@
             font-weight: bold;
             text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
             list-style: none;
-        }
-
-        #mobile_footer summary::-webkit-details-marker {
-            display: none
         }
 
         #mobile_footer ul {
