@@ -790,7 +790,56 @@ border-bottom: 5px solid red;
 }
 
 /* ! 4.5 - Mon compte*/
-/*TODO: Coder page*/
+.block-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5em;
+    background-color: black;
+}
+
+.block-account h1{
+    font-size: 3em;
+    font-weight: bold;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em white;
+}
+
+.form-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:1.5em;
+    width: 60%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold; 
+    border: 2px solid whitesmoke;
+    box-shadow: 12px 12px 2px 1px whitesmoke;
+    text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+    color: whitesmoke;
+}
+
+.form-account input[type=submit]{
+    margin: 1em;
+    padding: 1em;
+    font-size: 0.75em;
+    font-weight: bold;
+    background-color: black;
+    color: whitesmoke;;
+    text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+}
+
+.form-account input[type=text], .form-account input[type=password]{
+    width: 50%;
+    padding: 0.75em;
+    background-color: black;
+    color: whitesmoke;
+    border: 2px whitesmoke;
+    border-style: none inset inset inset;
+}
 
 
 /*! 5.0 - ASIDE*/
