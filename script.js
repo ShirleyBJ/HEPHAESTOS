@@ -1,7 +1,7 @@
 console.log("Début du script");
 var textDisplay = document.getElementById("text");
 console.log(textDisplay);
-var phrases = ["HEPAHESTOS","Plus q'un garage,","une famille."];
+var phrases = ["HEPHAESTOS","Plus q'un garage,","une famille."];
 console.log(phrases);
 var i = 0 ;
 var j = 0 ;
