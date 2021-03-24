@@ -1,7 +1,7 @@
 console.log("Début du script");
 var textDisplay = document.getElementById("text");
 console.log(textDisplay);
-var phrases = ["HEPHAESTOS","Plus qu'un garage,","une famille."];
+var phrases = ["HEPHAESTOS"];
 console.log(phrases);
 var i = 0 ;
 var j = 0 ;
@@ -44,7 +44,6 @@ function decoup(){
                 i = 0;
             }
     } 
-
-    setTimeout(decoup,100);
+    setTimeout(decoup,500);
 }
 decoup();

@@ -139,6 +139,7 @@ nav li:hover{
     background-image:url(img/bugatti.jpg);
     background-position: center;
     background-size: cover;
+    font-size: 2em;
 }
 
 .header_auto{ 
