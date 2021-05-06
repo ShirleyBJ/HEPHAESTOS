@@ -26,7 +26,6 @@ ul {
 }
 
 .logo_interSection{
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +34,7 @@ ul {
     height:50%;
     font-size: 2em;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
-    background-image:url(assets/img/baseLogo.png);
+    background-image:url(/assets/img/baseLogo.png);
     background-position: center;
     background-color:black;
     background-size:contain;
@@ -156,7 +155,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(assets/img/bugatti.jpg);
+    background-image:url(/assets/img/bugatti.jpg);
     background-position: center;
     background-size: cover;
     font-size: 2em;
@@ -168,7 +167,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(assets/img/auto.jpg);
+    background-image:url(/assets/img/auto.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -179,7 +178,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(assets/img/reno.jpg);
+    background-image:url(/assets/img/reno.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -190,7 +189,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(assets/img/ctc.jpg);
+    background-image:url(/assets/img/ctc.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -201,7 +200,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(assets/img/YCAR.jpg);
+    background-image:url(/assets/img/YCAR.jpg);
     background-position: center;
     background-size: cover;   
 }
@@ -321,7 +320,7 @@ header p{
 }
 
 .block_prestation a{
-    font-size: 1.15em;
+    font-size: 1em;
     font-weight: bold;
     text-decoration: none;
 }
@@ -745,8 +744,8 @@ border-bottom: 5px solid red;
 }
 
 .ctc_form input,label{
-    margin: 0.6em;
-    padding:0.6em;
+    margin: 0.4em;
+    /* padding:0.5em; */
     width: 100%;
 }
 
@@ -816,7 +815,7 @@ border-bottom: 5px solid red;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2.5em;
+    padding: 2em;
     background-color: black;
 }
 
@@ -832,8 +831,8 @@ border-bottom: 5px solid red;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:1.5em;
-    width: 60%;
+    padding:1em;
+    width: 50%;
     text-align: center;
     font-size: 2em;
     font-weight: bold; 
@@ -841,7 +840,7 @@ border-bottom: 5px solid red;
     box-shadow: 12px 12px 2px 1px whitesmoke;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
     color: whitesmoke;
-}
+}   
 
 .form-account input[type=submit]{
     margin: 1em;
@@ -1095,17 +1094,20 @@ font-size: 1.25em;
     border: 2px solid black;
     text-decoration: none;
     color:black;
-    background-color: #FFF;
+    background-color: rgba(255,250,250 ,0.4);
     font-weight: bold;
     border-radius: 35px;
+}
 
+#link__modal-open:hover{
+    background-color: rgba(255,250,250 ,1);
 }
 
 .modal__title{
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
-    color: whitesmoke;
+    font-size: 40px;
+    color: black;
 }
 
 .link__modal-close{
@@ -1123,6 +1125,22 @@ font-size: 1.25em;
 
 .fa-chevron-left{
     color: whitesmoke;
+}
+
+.fa-road{
+    color:grey;
+}
+
+.fa-map-marker-alt{
+    color: red;
+}
+
+.fa-calendar-check{
+    color:burlywood
+}
+
+.fa-hard-hat{
+    color:yellow;
 }
 
 /**CSS AJAX style*/

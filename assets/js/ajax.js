@@ -68,27 +68,31 @@ function getTraffic(){
                 blockData.classList.add('block__data');
 
                 var description = document.createElement('li');
-                description.innerHTML = "<strong>Description :</strong> " + dataTraffic.incidents[i].properties.events[0].description
+                //affecter une icône différente aux évenement principaux
+                var icon = "<i class=\"fas fa-hard-hat\"></i>";
+                if(dataTraffic.incidents[i].properties.events[0].description === "Travaux"){
+                    icon = "<i class=\"fas fa-hard-hat\"></i>";
+                } else if(dataTraffic.incidents[i].properties.events[0].description === "Route fermée" || dataTraffic.incidents[i].properties.events[0].description === "Une voie fermée" ){
+                    icon = "<i class=\"fas fa-exclamation-triangle\"></i>";
+                }
+                description.innerHTML = "<strong>"+ icon +" Description :</strong> " + dataTraffic.incidents[i].properties.events[0].description
                 
                 //Création d'un element li pour contenir chacune des informations
                 var road = document.createElement('li');
                 road.innerHTML = "<strong><i class=\"fas fa-road\"></i> Route concernée </strong>: " + dataTraffic.incidents[i].properties.roadNumbers[0];
 
-                var from = document.createElement('li');
-                from.innerHTML = "<strong><i class=\"fas fa-map-marked-alt\"></i> De : </strong>" + dataTraffic.incidents[i].properties.from + "<strong class=\"txtDecoration\"> à </strong> "+ dataTraffic.incidents[i].properties.to;
-
-                // var to = document.createElement('li');
-                // to.innerHTML = "<strong> à </strong>: " + dataTraffic.incidents[i].properties.to ;
+                var fromTo = document.createElement('li');
+                fromTo.innerHTML = "<strong><i class=\"fas fa-map-marker-alt\"></i> De : </strong>" + dataTraffic.incidents[i].properties.from + "<strong class=\"txtDecoration\">  à  </strong> " + dataTraffic.incidents[i].properties.to;
 
                 var startTime = document.createElement('li');
-                startTime.innerHTML = "<strong><i class=\"fas fa-clock\"></i> Date et heure du début de la pertubation</strong> : "+ dataTraffic.incidents[i].properties.startTime;
+                startTime.innerHTML = "<strong><i class=\"fas fa-clock\"></i> Début de la pertubation</strong> : "+ dataTraffic.incidents[i].properties.startTime;
                 
                 var endTime = document.createElement('li');
-                endTime.innerHTML = "<strong>Date et heure de fin de la pertubation </strong>: "+ dataTraffic.incidents[i].properties.endTime;
+                endTime.innerHTML = "<strong><i class=\"fas fa-calendar-check\"></i> Fin de la pertubation </strong>: "+ dataTraffic.incidents[i].properties.endTime;
                 
                 blockData.appendChild(description);
                 blockData.appendChild(road);
-                blockData.appendChild(from);
+                blockData.appendChild(fromTo);
                 //blockData.appendChild(to);
                 blockData.appendChild(startTime);
                 blockData.appendChild(endTime);
