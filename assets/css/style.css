@@ -959,7 +959,7 @@ font-size: 1.25em;
 
 .footer_socialMedia img{
     width: 25px;
-    padding:0.9em;
+    margin:0.9em;
 }
 
 .footer_link, .footer_services, .footer_contact, .footer_aboutUs {
