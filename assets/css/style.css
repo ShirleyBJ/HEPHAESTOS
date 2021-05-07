@@ -34,7 +34,7 @@ ul {
     height:50%;
     font-size: 2em;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
-    background-image:url(/assets/img/baseLogo.png);
+    background-image:url(../img/baseLogo.png);
     background-position: center;
     background-color:black;
     background-size:contain;
@@ -155,7 +155,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(/assets/img/bugatti.jpg);
+    background-image:url(../img/bugatti.jpg);
     background-position: center;
     background-size: cover;
     font-size: 2em;
@@ -167,7 +167,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(/assets/img/auto.jpg);
+    background-image:url(../img/auto.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -178,7 +178,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(/assets/img/reno.jpg);
+    background-image:url(../img/reno.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -189,7 +189,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(/assets/img/ctc.jpg);
+    background-image:url(../img/ctc.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -200,7 +200,7 @@ font-weight: bold;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(/assets/img/YCAR.jpg);
+    background-image:url(../img/YCAR.jpg);
     background-position: center;
     background-size: cover;   
 }
@@ -1142,6 +1142,15 @@ font-size: 1.25em;
 .fa-hard-hat{
     color:yellow;
 }
+
+.fa-users{
+    color:orange;
+}
+
+.fa-pause{
+    color: aquamarine;
+}
+
 
 /**CSS AJAX style*/
 .block__data{
