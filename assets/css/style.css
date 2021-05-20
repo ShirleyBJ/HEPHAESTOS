@@ -8,7 +8,8 @@
     * *4.2 - MAIN Prestations
     * *4.3 - MAIN Rénovation
     * *4.4 - MAIN Contact
-    * *4.5 - MAIN Compte
+    * *4.5 - MAIN Nos produits
+    * *4.6 - MAIN Compte
 * * 5.0 - ASIDE
 * * 6.0 - FOOTER
 */
@@ -655,7 +656,125 @@ header p{
     }
 }
 
-/* ! 4.4 - MAIN Contact*/
+/* ! 4.4 - MAIN Nos produits*/
+
+    .main_product,.aside-product{
+        background: white;
+    }
+
+    /**Main - Product*/
+
+    .product__card{
+        margin:20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        border: 2px solid whitesmoke;
+        background-color: whitesmoke;
+    }
+    
+    .product__container{
+        background: #FFC72C;
+        display: flex;
+    }
+
+    .product__img{
+        padding-top: 15px;
+        text-align: center;
+    }
+    .product__img--size{
+        max-width: 80%;
+    }
+
+    .main__product-section{
+        background-color: black;
+        width: 80%;
+    }
+
+    .product-section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product__title{
+        font-size: 25px;
+        margin-block-end: 15px;
+    }
+
+    .product__price{
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .prix-unitaire{
+        font-weight: normal;
+    }
+
+    .btn__reserved{
+        margin: 10px;
+        padding: 10px 20px 10px 20px;
+        border-radius: 15px 30px 15px 30px;
+        border: none;
+        background-color: lightgray;
+    }
+
+/** Aside - Product*/
+    .aside-product{
+        width: 20%;
+    }
+
+    .aside-container__search-product{
+        background: lightgrey;
+        padding: 1.5em;
+    }
+
+    .fa-search{
+        color:white;
+    }
+
+    .npt__search-product{
+        max-width: 85%;
+        border: none;
+        padding: 0.5em;
+        border-radius: 5px;
+    }
+
+    .btn__search-product{
+        background: goldenrod;
+        border: none;
+        margin: 0;
+        padding:0.40em;
+    }
+
+    /*? Aside-categorie*/
+
+    .aside-container__product-category{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-category, .filter-check--space{
+        padding: 5px;
+    }
+
+    .aside-product__title{
+        font-size: 1.5em ;
+        padding-bottom: 15px;
+        border-bottom: 2px solid  black;
+        margin-block-end: 15px;
+    }
+
+    .filter-price--centered{
+        text-align: center;
+    }
+    
+
+/* ! 4.5 - MAIN Contact*/
 .ctc_custom{
     display: flex;
     flex-direction: row;
@@ -825,7 +944,7 @@ border-bottom: 5px solid red;
     }
 }
 
-/* ! 4.5 - Mon compte*/
+/* ! 4.6 - Mon compte*/
 .block-account{
     display: flex;
     flex-direction: column;
