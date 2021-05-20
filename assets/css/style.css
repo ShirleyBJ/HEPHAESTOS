@@ -205,13 +205,29 @@ font-weight: bold;
     background-size: cover;   
 }
 
+.header_product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:650px;
+    background-image:url(../img/carengine.jpg);
+    background-position: center;
+    background-size: cover;   
+}
+
 header h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 5em;
     color: honeydew;
     font-weight: bold;
     text-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
 }
+
+.title__accueil{
+    font-size: 3em;
+}
+
 
 header p{
     margin: 0;
