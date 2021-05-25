@@ -78,14 +78,15 @@ li a{
 nav li:hover{
     padding: 0.5em 0;
     box-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
+    border-radius: 30px;
 }
 
 .logo_nav{
     width: 200px;
 }
 
-.picto_nav{
-    width: 70px;
+.fa-user{
+    font-size: 30px;
 }
 
 /*Scrolling bar effect JS*/
