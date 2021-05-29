@@ -820,13 +820,18 @@ border-bottom: 5px solid red;
     height: 50px;
 }
 
+.ctc_img--responsive{
+    max-width: 100%;
+    height: auto;
+}
+
 .ctc_info{
     display: flex;
     flex-direction: column;
     margin: 3.125em;
     padding: 1.5625em;
     background-color: whitesmoke;
-    border-radius: 10%;
+    /* border-radius: 10%; */
 }
 
 .ctc_info address{
@@ -839,6 +844,8 @@ border-bottom: 5px solid red;
     padding: 0.6em;
     margin:0.3em;
     color: black;
+    font-size: 18px;
+    font-family: 'Pattaya', sans-serif;
 }
 
 .map_centered{
@@ -848,8 +855,9 @@ border-bottom: 5px solid red;
     background-color: black;
 }
 
-.img_map{
-    width: 330px;
+.map-api{
+    width: 350px;
+    /* border-radius: 30px; */
 }
 
 .ctc_form{
@@ -858,20 +866,30 @@ border-bottom: 5px solid red;
     margin: 2.5em;
 }
 
+.ctc_title{
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px 0px 10px 0px;
+    font: 25px;
+    font-family: 'Pattaya', sans-serif;
+}
+
 .ctc_form form{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 3.125em;
-    width: 100%;
+    width: 90%;
     background-color: whitesmoke;
     border: 2px solid black;
     border-radius: 10%;
+    box-shadow: 1px 1px 10px 5px rgb(99, 96, 96);
 }
 
-.size{
-    width:50px;
-    height:50px
+.ctc-user-form,.fa-envelope,.fa-phone-alt{
+    font-size: 25px;
+    color: red;
+    align-self: center;
 }
 
 .inline{
@@ -880,9 +898,43 @@ border-bottom: 5px solid red;
 }
 
 .ctc_form input,label{
-    margin: 0.4em;
-    /* padding:0.5em; */
-    width: 100%;
+    margin: 1em;
+    padding:0.5em;
+    border-bottom: 1px solid black;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.npt__ctc--style{
+    width: 90%;
+    border: none;
+    outline: none;
+}
+
+.npt__ctc--style::placeholder,.ctc_form textarea::placeholder {
+    color: black;
+    font-size: 16px;
+}
+
+.ctc_form textarea{
+    margin-top: 1em;
+    padding:0.5em;
+    border:1px solid black;
+    font-family: 'Pattaya', sans-serif;
+    outline: none;
+    resize: none;
+    overflow: auto;
+}
+
+.npt__ctc--backgd{
+    background-color: whitesmoke;
+}
+
+.btn_ctc--style{
+    align-self: center;
+    background-color: whitesmoke;
+    width: 25%;
+    font-size: 16px;
+    border:1px solid
 }
 
 .ctc_form img{
@@ -960,6 +1012,7 @@ border-bottom: 5px solid red;
     font-weight: bold;
     color: whitesmoke;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em white;
+    font-family: 'Pattaya', sans-serif;
 }
 
 .form-account{
@@ -986,6 +1039,7 @@ border-bottom: 5px solid red;
     background-color: black;
     color: whitesmoke;;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+    font-family: 'Pattaya', sans-serif;
 }
 
 .form-account input[type=text], .form-account input[type=password]{
