@@ -66,15 +66,20 @@ function getTraffic(){
                 //Création d'un element div pour contenir tous les élements
                 var blockData = document.createElement('ul');
                 blockData.classList.add('block__data');
-
                 var description = document.createElement('li');
+
                 //affecter une icône différente aux évenement principaux
-                var icon = "<i class=\"fas fa-hard-hat\"></i>";
+                var icon = "";
                 if(dataTraffic.incidents[i].properties.events[0].description === "Travaux"){
                     icon = "<i class=\"fas fa-hard-hat\"></i>";
                 } else if(dataTraffic.incidents[i].properties.events[0].description === "Route fermée" || dataTraffic.incidents[i].properties.events[0].description === "Une voie fermée" ){
                     icon = "<i class=\"fas fa-exclamation-triangle\"></i>";
+                } else if(dataTraffic.incidents[i].properties.events[0].description === "Bouchon"){
+                    icon = "<i class=\"fa fa-users\" aria-hidden=\"true\"></i>";
+                }else if(dataTraffic.incidents[i].properties.events[0].description === "Trafic ralenti" ||dataTraffic.incidents[i].properties.events[0].description === "Trafic avec des à-coups" ){
+                    icon = "<i class=\"fa fa-pause\" aria-hidden=\"true\"></i>";
                 }
+
                 description.innerHTML = "<strong>"+ icon +" Description :</strong> " + dataTraffic.incidents[i].properties.events[0].description
                 
                 //Création d'un element li pour contenir chacune des informations
