@@ -13,15 +13,16 @@ USE hephaestos;
 /*Client : */
 
 CREATE TABLE client(
-    Numero_client INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    Civilite VARCHAR(5) NOT NULL,
-    Nom VARCHAR(60) NOT NULL,
-    Prenom VARCHAR(60) NOT NULL,
-    Adresse VARCHAR(60) NOT NULL,
+    numero_client INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    civilite VARCHAR(5) NOT NULL,
+    nom VARCHAR(60) NOT NULL,
+    prenom VARCHAR(60) NOT NULL,
+    adresse VARCHAR(60) NOT NULL,
     CP VARCHAR(5) NOT NULL,
-    Ville VARCHAR(80) NOT NULL,
-    Telephone VARCHAR(10) NOT NULL,
-    Email VARCHAR(150) NOT NULL UNIQUE
+    ville VARCHAR(80) NOT NULL,
+    telephone VARCHAR(10) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    mot_de_passe VARCHAR(150) NOT NULL
 ) ENGINE = INNODB DEFAULT CHARSET=UTF8;
 
 /*Fournisseurs: */
@@ -55,6 +56,7 @@ CREATE TABLE employe(
     ville VARCHAR(80) NOT NULL,
     telephone VARCHAR(10) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
+    mot_de_passe VARCHAR(150) NOT NULL,
     date_naissance DATE DEFAULT now(),
     fonction VARCHAR(30) NOT NULL,
     rend_compte VARCHAR(60) NOT NULL,
@@ -102,21 +104,21 @@ CREATE TABLE commande(
 
 
 /*SQL : Insert into employe table*/
-INSERT INTO employe (numero_employe,nom,prenom,adresse,CP,ville,telephone,email,date_naissance,fonction,rend_compte,date_embauche, date_fin_contrat)
-	VALUES('','Berchel','Shirley','5 rue du moulin','60310','Beaulieu-les-fontaines','0627931041','berchel.shirley@gmail.com','1996-09-19','gérant','','2021/01/04',' '),
-    ('','Smith','Maze','11 rue DownWorld','00000','HellCity','0685954565','maze.smith@gmail.com','1994-06-09','Garagiste','Gérant','2021/01/04','-'),
-    ('','Stones','Damon','Place de la grande ceinture','12563','Midgard','0789652622','damon.stones@gmail.com','1990-01-25','Garagiste','Gérant','2021/01/04','-'),
-    ('','Creed','Elijah','41 rue de la libération','69566','Haven','0645178293','elijah.creed@gmail.com','1988-05-13','Garagiste','Gérant','2021/01/04','-'),
-    ('','Seen','Minerva','5 envolée de la lance argentée','12125','Olympia','0745698245','minerva.seen@gmail.com','1991-08-20','Secrétaire','Gérant','2021/01/04','-');
+INSERT INTO employe (numero_employe,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe,date_naissance,fonction,rend_compte,date_embauche, date_fin_contrat)
+	VALUES('','Berchel','Shirley','5 rue du moulin','60310','Beaulieu-les-fontaines','0627931041','berchel.shirley@gmail.com','Elise1601#','1996-09-19','gérant','','2021/01/04',' '),
+    ('','Smith','Maze','11 rue DownWorld','00000','HellCity','0685954565','maze.smith@gmail.com','first','1994-06-09','Garagiste','Gérant','2021/01/04','-'),
+    ('','Stones','Damon','Place de la grande ceinture','12563','Midgard','0789652622','damon.stones@gmail.com','second','1990-01-25','Garagiste','Gérant','2021/01/04','-'),
+    ('','Creed','Elijah','41 rue de la libération','69566','Haven','0645178293','elijah.creed@gmail.com','third','1988-05-13','Garagiste','Gérant','2021/01/04','-'),
+    ('','Seen','Minerva','5 envolée de la lance argentée','12125','Olympia','0745698245','minerva.seen@gmail.com','fourth','1991-08-20','Secrétaire','Gérant','2021/01/04','-');
 
 
 /*SQL : Insert into employe table*/
-INSERT INTO client(Numero_client,Civilite,Nom,Prenom,Adresse,CP,Ville,Telephone,Email)
-	VALUES ('1','Mme','Igaî','Mnévis','Avenue des Pharaons',56892,'Siwa','0632589475','mnevis.igai@yahoo.com'),
-    ('2','Mr','Velch','Hélios','Place de la grandeur',11111,'Olympia','0689526341','helios.velch@hotmail.fr'),
-    ('3','Mr','Laran','Phénix','3 boulevard des cendres',45624,'Enflammée-sur-fin','0745632185','phenix.laran@outlook.com'),
-    ('4','Mme','Rind','Erda','5 cote de Mjolnir',25364,'Bifrost','0632589471','erda.rind@gmail.com'),
-    ('5','Mme','Od','Saegming','Place du grand Asgard',61455,'Valhalla','0635896547','saegming.od@hotmail.com');
+INSERT INTO client(Numero_client,Civilite,Nom,Prenom,Adresse,CP,Ville,Telephone,Email,mot_de_passe)
+	VALUES ('1','Mme','Igaî','Mnévis','Avenue des Pharaons',56892,'Siwa','0632589475','mnevis.igai@yahoo.com','secret'),
+    ('2','Mr','Velch','Hélios','Place de la grandeur',11111,'Olympia','0689526341','helios.velch@hotmail.fr','123456'),
+    ('3','Mr','Laran','Phénix','3 boulevard des cendres',45624,'Enflammée-sur-fin','0745632185','phenix.laran@outlook.com','helloWorld'),
+    ('4','Mme','Rind','Erda','5 cote de Mjolnir',25364,'Bifrost','0632589471','erda.rind@gmail.com','000000'),
+    ('5','Mme','Od','Saegming','Place du grand Asgard',61455,'Valhalla','0635896547','saegming.od@hotmail.com','password');
 
 
 /*SQL : Insert into categorie produit table*/
