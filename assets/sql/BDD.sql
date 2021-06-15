@@ -73,7 +73,7 @@ CREATE TABLE produit(
     quantite INTEGER NOT NULL DEFAULT 0,
     prix_unitaire FLOAT NOT NULL DEFAULT 0,
     code_categorie INT NOT NULL,
-    unites_stock INTEGER AS (quantite - unites),
+    unites_stock INTEGER AS (quantite - unites_commandes),
     unites_commandes INTEGER NOT NULL DEFAULT 0,
     CONSTRAINT fk_no_fournisseur 
     FOREIGN KEY(no_fournisseur) REFERENCES fournisseur(no_fournisseur),
