@@ -248,9 +248,12 @@ VALUES
 (84,'Câbles d\'embrayage',2,100,24.00,7,0),
 (85,'Cylindre émetteur d\'embrayage',3,100,39.00,7,0),
 (86,'Cylindre récepteur d\'embrayage',3,100,41.00,7,0),
-(87,'Butée d\'embrayage hydraulique',4,100,148.00,7,0),
+(87,'Butée dembrayage hydraulique',4,100,148.00,7,0),
 (88,'Douille de guidage',5,100,16.95,7,0),
 (89,'Volant moteur',4,100,388.00,7,0),
 (90,'Volant moteur flexible',4,100,416.95,7,0)
 ;
 
+/*SQL : Insert into commande table*/
+INSERT INTO commande (numero_commande,date_commande,date_retrait,numero_client,numero_employe,reference_produit,quantite,prix_unitaire)
+VALUES(1,'2021-06-10','2021-06-15',1,2,5,1,69.95);
