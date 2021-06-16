@@ -10,6 +10,7 @@
     * *4.4 - MAIN Contact
     * *4.5 - MAIN Nos produits
     * *4.6 - MAIN Compte
+    * *4.7 - Inscription
 * * 5.0 - ASIDE
 * * 6.0 - FOOTER
 */
@@ -151,76 +152,49 @@ font-weight: bold;
 
 /* ! 3.0 - HEADER*/
 
-.header_accueil{ 
+header{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height:650px;
-    background-image:url(../img/bugatti.jpg);
     background-position: center;
     background-size: cover;
     font-size: 2em;
 }
 
+.header_accueil{ 
+    background-image:url(../img/bugatti.jpg);
+}
+
 .header_auto{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:650px;
     background-image:url(../img/auto.jpg);
-    background-position: center;
-    background-size: cover;
 }
 
 .header_reno{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:650px;
     background-image:url(../img/reno.jpg);
-    background-position: center;
-    background-size: cover;
+
 }
 
 .header_ctc{ 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:650px;
     background-image:url(../img/ctc.jpg);
-    background-position: center;
-    background-size: cover;
 }
 
 .header_account{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:650px;
     background-image:url(../img/YCAR.jpg);
-    background-position: center;
-    background-size: cover;   
+
 }
 
 .header_product{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:650px;
-    background-image:url(../img/carengine.jpg);
-    background-position: center;
-    background-size: cover;   
+    background-image:url(../img/carengine.jpg);  
 }
 
+.header_suscribe{
+    background-image:url(../img/carengine.jpg);
+}
 header h1 {
     text-align: center;
-    font-size: 5em;
+    font-size: 2.75em;
     color: honeydew;
     font-weight: bold;
     text-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
@@ -990,15 +964,15 @@ border-bottom: 5px solid red;
         margin: 0.1em;
     }
 
-    .ctc_form input,label{
+    .ctc_form input,.ctc_form label{
         margin: 0.3em;
         padding:0.3em;
         width: auto;
     }
 }
 
-/* ! 4.6 - Mon compte*/
-.block-account{
+/* ! 4.6 - Mon compte / Inscription*/
+.block-account, .block-suscribe{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1015,13 +989,13 @@ border-bottom: 5px solid red;
     font-family: 'Pattaya', sans-serif;
 }
 
-.form-account{
+.form-account, .form-suscribe{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding:0.5em;
-    width: 50%;
+    width: 70%;
     text-align: center;
     font-size: 2em;
     font-weight: bold; 
@@ -1029,9 +1003,13 @@ border-bottom: 5px solid red;
     box-shadow: 12px 12px 2px 1px whitesmoke;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
     color: whitesmoke;
-}   
+}  
 
-.form-account input[type=submit]{
+.form-suscribe{
+    width: 50%;
+}
+
+.form-account input[type=submit], .form-suscribe input[type=submit] {
     margin: 0.5em;
     padding: 0.5em;
     font-size: 0.75em;
@@ -1044,11 +1022,64 @@ border-bottom: 5px solid red;
 
 .form-account input[type=text], .form-account input[type=password]{
     width: 50%;
-    /* padding: 0.75em; */
     background-color: black;
     color: whitesmoke;
     border: 2px whitesmoke;
     border-style: none inset inset inset;
+}
+
+.form-suscribe input[type=text], .form-suscribe input[type=password], .form-suscribe input[type=email],.form-suscribe input[type=tel]{
+    margin: 1em;
+    width: 55%;
+    background-color: black;
+    color: whitesmoke;
+    border: 2px whitesmoke;
+    border-style: none inset inset inset;
+}
+
+
+.block-account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    background-color: black;
+}
+
+.block-account h1, .block-suscribe h1{
+    font-size: 3em;
+    font-weight: bold;
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em white;
+    font-family: 'Pattaya', sans-serif;
+}
+
+.block-account h2, .block-suscribe h2{
+    border: 2px solid whitesmoke;
+    padding: 0.75em;
+}
+
+.block-suscribe__npt--style{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center ;
+}
+
+.suscribe-select__style{
+    font-size: 0.75em;
+    font-weight: bold;
+    background-color: black;
+    color: whitesmoke;;
+    text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
+    font-family: 'Pattaya', sans-serif;
+    border: 2px solid whitesmoke ;
+}
+
+.link__toSuscribe--style{
+    color: #f5f5f5;
+    font-size: 20px;
 }
 
 
