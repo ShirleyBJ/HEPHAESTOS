@@ -897,6 +897,7 @@ border-bottom: 5px solid red;
     outline: none;
     resize: none;
     overflow: auto;
+    font-size: 20px;
 }
 
 .npt__ctc--backgd{
@@ -995,7 +996,7 @@ border-bottom: 5px solid red;
     align-items: center;
     justify-content: center;
     padding:0.5em;
-    width: 70%;
+    width: 50%;
     text-align: center;
     font-size: 2em;
     font-weight: bold; 
@@ -1004,10 +1005,6 @@ border-bottom: 5px solid red;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
     color: whitesmoke;
 }  
-
-.form-suscribe{
-    width: 50%;
-}
 
 .form-account input[type=submit], .form-suscribe input[type=submit] {
     margin: 0.5em;
@@ -1026,6 +1023,7 @@ border-bottom: 5px solid red;
     color: whitesmoke;
     border: 2px whitesmoke;
     border-style: none inset inset inset;
+    font-size: 20px;
 }
 
 .form-suscribe input[type=text], .form-suscribe input[type=password], .form-suscribe input[type=email],.form-suscribe input[type=tel]{
@@ -1035,6 +1033,7 @@ border-bottom: 5px solid red;
     color: whitesmoke;
     border: 2px whitesmoke;
     border-style: none inset inset inset;
+    font-size: 20px;
 }
 
 
@@ -1075,6 +1074,7 @@ border-bottom: 5px solid red;
     text-shadow: 1px 1px 2px whitesmoke, 0 0 1em grey, 0 0 0.2em grey;
     font-family: 'Pattaya', sans-serif;
     border: 2px solid whitesmoke ;
+    width: 200px;
 }
 
 .link__toSuscribe--style{
