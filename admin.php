@@ -1,15 +1,15 @@
 <?php
+    session_start();
     include("assets/php/template/template_top.php");
     include("assets/php/template/template_nav.php");
-    include("assets\php\inc\alert.inc.php")
+    include("assets\php\inc\alert.inc.php");
+    alert("Connexion réussie !");
 ?>
 <!--HEADER-->
     <header class="">
-        <h1>Espace Administrateur</h1>
+        <h1>ESPACE ADMINISTRATEUR</h1>
+        <p>Bienvenue <?php echo $_SESSION['prenom']; ?></p>
     </header>
-    <?php 
-    alert("Connexion réussie !");
-    ?>
     <?php
 include("assets/php/template/template_bottom.php");
 ?>

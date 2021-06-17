@@ -1,12 +1,13 @@
 <?php
+session_start();
+include_once('inc/constants.inc.php');
 // Nettoie les données passées dans POST : htmlspecialchars
 $mail = (isset($_POST['email']) && !empty($_POST['email'])) ? htmlspecialchars($_POST['email']) : null;
 $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars($_POST['passwd']) : null;
 
+
     // Connexion
     try{
-        include_once('inc/constants.inc.php');
-        include('inc\alert.inc.php');
         $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
         // Gestion des attributs de la connexion : exception et retour 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -20,10 +21,12 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
         // Si une ligne est trouvée
         if ($qry1->rowCount()=== 1) {
             $row = $qry1->fetch();
+            $_SESSION['prenom'] = $row['prenom'];
             // var_dump($row);
             header('location: ../../admin.php');
         } elseif($qry2->rowCount()=== 1){
             $row = $qry2->fetch();
+            $_SESSION['prenom'] = $row['prenom'];
             // var_dump($row);
             header('location: ../../user.php');
         } else {
