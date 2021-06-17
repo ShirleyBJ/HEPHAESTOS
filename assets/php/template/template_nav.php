@@ -1,6 +1,6 @@
 <!--NAV-->
 <nav id="desktop_menu">
-        <a href="index.html"><img class="logo_nav" src="assets/img/logoHephaestos.png" alt="Logo du garage Hephaestos"></a>
+        <a href="index.php"><img class="logo_nav" src="assets/img/logoHephaestos.png" alt="Logo du garage Hephaestos"></a>
         <ul>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="page2.php">Automobile</a></li>
@@ -15,7 +15,7 @@
     </nav>
     <!--Mobile Nav-->
     <nav id="mobile_menu">
-        <a href="index.html"><img class="logo_nav"src="img/logoHephaestos.png" alt="Logo du garage Hephaestos"></a>
+        <a href="index.php"><img class="logo_nav"src="img/logoHephaestos.png" alt="Logo du garage Hephaestos"></a>
         <details><summary> Menu </summary>
             <ul>
                 <li><a href="index.php">Accueil</a></li>

@@ -7,7 +7,7 @@ switch ($_SERVER['HTTP_HOST']) {
     case 'localhost':
         define('HOST', 'localhost');
         define('PORT', 3306);
-        define('DATA', 'greta60');
+        define('DATA', 'hephaestos');
         define('USER', 'root');
         define('PASS', '');
         break;
