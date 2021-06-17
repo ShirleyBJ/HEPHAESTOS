@@ -1,5 +1,6 @@
 <?php
     session_start();
+    //TODO:Vérifier si utilisateur connecté
     include("assets/php/template/template_top.php");
     include("assets/php/template/template_nav.php");
     include("assets\php\inc\alert.inc.php")
