@@ -9,7 +9,7 @@
     </header>
     <main>
         <section class="block-suscribe">
-            <form class="form-suscribe" name="formSuscribe" action="">
+            <form  action="assets/php/connection/register.php" method="post" class="form-suscribe" name="formSuscribe" >
                 <h2>Formulaire d'inscription</h2>
                 <div class="block-suscribe__npt--style">
                     <label for ="civilite"> Civilité:</label>
@@ -20,12 +20,16 @@
                     </select>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="idSuscribe" class="align-start"> Nom : </label>
-                    <input type="text" name="idSuscribe" id="idSuscribe" class="align-end">
+                    <label for="lastNameSuscribe" class="align-start"> Nom : </label>
+                    <input type="text" name="lastNameSuscribe" id="lastNameSuscribe" class="align-end">
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="adressSusbcribe">Adresse : </label>
-                    <input type="text" name="adressSusbcribe" id="adressSusbcribe">
+                    <label for="firstNameSuscribe" class="align-start"> Prénom : </label>
+                    <input type="text" name="firstNameSuscribe" id="firstNameSuscribe" class="align-end">
+                </div>
+                <div class="block-suscribe__npt--style">
+                    <label for="adressSuscribe">Adresse : </label>
+                    <input type="text" name="adressSuscribe" id="adressSuscribe">
                 </div>
                 <div class="block-suscribe__npt--style">
                     <label for="CPSuscribe">CP : </label>
@@ -54,3 +58,5 @@
     <?php
     include('assets/php/template/template_bottom.php');
     ?>
+
+    <!--TODO: Ajouter verification MDP, pattern au mdp et required au champs nécessaire->

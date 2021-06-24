@@ -10,6 +10,8 @@
         <h1>Espace Client</h1>
         <p>Bienvenue <?php echo $_SESSION['prenom']; ?></p>
     </header>
+    <main>
+    </main>
     <?php 
     alert("Connexion réussie !");
     ?>

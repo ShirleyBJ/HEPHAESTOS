@@ -10,7 +10,8 @@
     * *4.4 - MAIN Contact
     * *4.5 - MAIN Nos produits
     * *4.6 - MAIN Compte
-    * *4.7 - Inscription
+    * *4.7 - MAIN Inscription
+    * *4.8 - MAIN User
 * * 5.0 - ASIDE
 * * 6.0 - FOOTER
 */
@@ -182,7 +183,6 @@ header{
 
 .header_account{
     background-image:url(../img/YCAR.jpg);
-
 }
 
 .header_product{
@@ -192,6 +192,11 @@ header{
 .header_suscribe{
     background-image:url(../img/suscribe2.jpg);
 }
+
+.header__acount{
+    height:250px;
+}
+
 header h1 {
     text-align: center;
     font-size: 2.75em;
@@ -631,7 +636,7 @@ header p{
     }
 }
 
-/* ! 4.4 - MAIN Nos produits*/
+/*! 4.4 - MAIN Nos produits*/
 
     .main_product,.aside-product{
         background: white;
@@ -1082,6 +1087,32 @@ border-bottom: 5px solid red;
     font-size: 20px;
 }
 
+/*! 4.7 - MAIN User*/
+
+.user-account{
+    display:flex;
+}
+
+.menu__user-account{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    width:20%;
+}
+
+.block__user-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+    background-image : url("../img/suscribe.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 
 /*! 5.0 - ASIDE*/
 
@@ -1137,14 +1168,14 @@ aside li{
 
 footer{
     color: whitesmoke;
-    padding: 0.9em;
+    padding: 0.5em;
     color: whitesmoke;
     background-color: black;
     border-top: 2px solid silver;
 }
 
 footer li{
-    padding: 0.9em;
+    padding: 0.5em;
     font-size: 1.25em;
 }
 
@@ -1153,7 +1184,7 @@ footer a {
 }
 
 footer a:hover {
-    padding: 0.9em 1em;
+    padding: 0.5em 1em;
     font-weight: bold;
     border: none;
     box-shadow: 1px 1px 2px black, 0 0 1em grey, 0 0 0.2em whitesmoke;
@@ -1375,6 +1406,7 @@ font-size: 1.25em;
 
 
 /**CSS AJAX style*/
+
 .block__data{
     list-style-type: none;
     border: 2px solid whitesmoke;
@@ -1390,3 +1422,6 @@ font-size: 1.25em;
 .txtDecoration{
     text-decoration: underline;
 }
+
+
+

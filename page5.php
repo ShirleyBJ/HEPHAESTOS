@@ -10,7 +10,7 @@
     <!--MAIN-->
     <main>
         <section class="block-account">
-            <form action="assets/php/login.php" method="POST"  class="form-account" name="formCo">
+            <form action="assets/php/connection/login.php" method="POST"  class="form-account" name="formCo">
                 <h2>Connexion</h2>
                 <label for="email">Identifiant : </label>
                 <input type="text" name="email" id="email" required>
