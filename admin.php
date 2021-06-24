@@ -17,9 +17,9 @@
             <p> Mes informations personelles</p>
             <p> Messagerie</p>
             <p> Gestion des stocks</p>
-            <p> Gestion des clients</p>
+            <p> <a href="admin-gestion-employe.php">Gestion des clients</a></p>
             <p> Gestion des employés</p>
-            <p><i class="fas fa-sign-out-alt"></i>Se déconnecter</p>
+            <p><i class="fas fa-sign-out-alt"></i><a href="assets/php/connection/logout.php">Se déconnecter</a></p>
         </section>
         <section class="block__user-data">
         </section>

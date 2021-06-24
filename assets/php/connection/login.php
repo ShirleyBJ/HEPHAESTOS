@@ -33,7 +33,7 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
             header('location: ../../../page5.php');
             echo 'User inconnu';
         }
-    }catch(Exception $err){
+    }catch(PDOException $err){
         echo $err ->getMessage();
     }
 ?>
