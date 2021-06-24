@@ -35,12 +35,12 @@ include_once("assets/php/inc/constants.inc.php");
                 $qry = $conn->prepare('SELECT * FROM employe');
                 $qry->execute();
 
-                $html= '<table>
+                $html= '<table class= "array__manage-employe">
                 <thead>
                     <!--En tête tableau-->
                     <tr>
                         <!--Ligne du tableau-->
-                        <th colspan="2">Liste des employés</th>
+                        <th colspan="14">Liste des employés</th>
                         <!--Colonne du tableau-->
                     </tr>
                 </thead>

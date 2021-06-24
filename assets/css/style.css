@@ -1113,8 +1113,20 @@ border-bottom: 5px solid red;
     background-size: cover;
 }
 
-.block__user-admin{
-    color: aliceblue;
+.array__manage-employe {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: sandybrown;
+}
+
+.array__manage-employe td,th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.array__manage-employe thead{
+    background-color: yellow;
+    font-size: 18px;
 }
 
 
