@@ -13,19 +13,18 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         // Préparation requête : paramétrage pour éviter injections SQL
-
-        $qry1 = $conn->prepare('SELECT * FROM employe WHERE email= ? AND mot_de_passe= ?');
-        $qry1->execute(array($mail,$pass));
-        $qry2 = $conn->prepare('SELECT * FROM client WHERE email= ? AND mot_de_passe= ?');
-        $qry2->execute(array($mail,$pass));
+        $qry = $conn->prepare('SELECT * FROM employe WHERE email= ? AND mot_de_passe= ?');
+        $qry->execute(array($mail,$pass));
         // Si une ligne est trouvée
-        if ($qry1->rowCount()=== 1) {
-            $row = $qry1->fetch();
+        if ($qry->rowCount()=== 1) {
+            $row = $qry->fetch();
             $_SESSION['prenom'] = $row['prenom'];
             // var_dump($row);
             header('location: ../../../admin.php');
-        } elseif($qry2->rowCount()=== 1){
-            $row = $qry2->fetch();
+        } elseif($qry->rowCount()=== 0){
+            $qry = $conn->prepare('SELECT * FROM client WHERE email= ? AND mot_de_passe= ?');
+            $qry->execute(array($mail,$pass));
+            $row = $qry->fetch();
             $_SESSION['prenom'] = $row['prenom'];
             // var_dump($row);
             header('location: ../../../user.php');
