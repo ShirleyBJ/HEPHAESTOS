@@ -1091,6 +1091,8 @@ border-bottom: 5px solid red;
 
 .user-account{
     display:flex;
+    justify-content: space-around;
+    width: auto;
 }
 
 .menu__user-account{
@@ -1113,19 +1115,37 @@ border-bottom: 5px solid red;
     background-size: cover;
 }
 
-.array__manage-employe {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: sandybrown;
+.block__user-admin-stock{
+    display: flex;
+    justify-content: center;
 }
 
-.array__manage-employe td,th{
+.user-admin__data{
+    width: auto;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.array__manage {
+    border-collapse: collapse;
+    background-color: silver;
+}
+
+.array__manage td,th{
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: center;
+}
+.array__manage tr:nth-child(even){
+    background-color: #f2f2f2;
 }
 
-.array__manage-employe thead{
-    background-color: yellow;
+.array__manage tr:hover{
+    background-color: #ddd;
+}
+
+.array__manage thead{
+    background-color: #FFC72C;
     font-size: 18px;
 }
 

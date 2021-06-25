@@ -15,7 +15,6 @@ include_once("assets/php/inc/constants.inc.php");
     <?php
     include_once("assets/php/template/template_menu-admin.php");
     ?>
-
     <section class="block__user-admin">
         <?php
         if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])) {
@@ -27,7 +26,7 @@ include_once("assets/php/inc/constants.inc.php");
                 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
                 //Préparation de la requête : paramétrage pour eviter injection SQL
-                $qry = $conn->prepare('SELECT * FROM employe');
+                $qry = $conn->prepare('SELECT * FROM client');
                 $qry->execute();
 
                 $html = '<table class= "array__manage">
@@ -35,7 +34,7 @@ include_once("assets/php/inc/constants.inc.php");
                     <!--En tête tableau-->
                     <tr>
                         <!--Ligne du tableau-->
-                        <th colspan="14">Liste des employés</th>
+                        <th colspan="14">Liste des clients</th>
                         <!--Colonne du tableau-->
                     </tr>
                 </thead>
