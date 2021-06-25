@@ -19,6 +19,7 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
         if ($qry->rowCount()=== 1) {
             $row = $qry->fetch();
             $_SESSION['prenom'] = $row['prenom'];
+            $_SESSION['email'] = $row['email'];
             // var_dump($row);
             header('location: ../../../admin.php');
         } elseif($qry->rowCount()=== 0){
@@ -26,6 +27,7 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
             $qry->execute(array($mail,$pass));
             $row = $qry->fetch();
             $_SESSION['prenom'] = $row['prenom'];
+            $_SESSION['email'] = $row['email'];
             // var_dump($row);
             header('location: ../../../user.php');
         } else {
