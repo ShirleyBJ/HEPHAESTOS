@@ -3,7 +3,6 @@ session_start();
 include("assets/php/template/template_top.php");
 include("assets/php/template/template_nav.php");
 include("assets/php/inc/alert.inc.php");
-include_once("assets/php/inc/constants.inc.php");
 // alert("Connexion réussie !");
 ?>
 <!--HEADER-->
@@ -16,54 +15,56 @@ include_once("assets/php/inc/constants.inc.php");
     include_once("assets/php/template/template_menu-admin.php");
     ?>
     <section class="block__user-admin">
-        <?php
-        if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])) {
-            // echo 'Utilisateur connecté';
-            try {
-                $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
-                // Gestion des attributs de la connexion : exception et retour 
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        <section class="user-admin">
+            <?php
+            if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])) {
+                // echo 'Utilisateur connecté';
+                try {
+                    // $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
+                    // // Gestion des attributs de la connexion : exception et retour 
+                    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    // $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-                //Préparation de la requête : paramétrage pour eviter injection SQL
-                $qry = $conn->prepare('SELECT * FROM client');
-                $qry->execute();
+                    //Préparation de la requête : paramétrage pour eviter injection SQL
+                    $qry = $conn->prepare('SELECT numero_client,civilite,nom,prenom,adresse,cp,ville,telephone,email
+                FROM client');
+                    $qry->execute();
 
-                $html = '<table class= "array__manage">
+                    $html = '<table class= "array__manage">
                 <thead>
                     <!--En tête tableau-->
                     <tr>
                         <!--Ligne du tableau-->
-                        <th colspan="14">Liste des clients</th>
+                        <th colspan="10">Liste des clients</th>
                         <!--Colonne du tableau-->
                     </tr>
                 </thead>
                 <tbody>';
-                //Parcourt toutes les colonnes qu'il y a dans le résultat de la requete pour récupérer le nom des colonnes
-                for ($i = 0; $i < $qry->columnCount(); $i++) {
-                    $meta = $qry->getColumnMeta($i);
-                    $html .= '<th>' . $meta['name'] . '</th>';
-                }
-
-                foreach ($qry->fetchAll() as $row) {
-                    $html .= '<tr>';
-                    //Parcourt le second array
-                    foreach ($row as $key => $val) {
-                        $html .= '<td>' . $val . '</td>';
+                    //Parcourt toutes les colonnes qu'il y a dans le résultat de la requete pour récupérer le nom des colonnes
+                    for ($i = 0; $i < $qry->columnCount(); $i++) {
+                        $meta = $qry->getColumnMeta($i);
+                        $html .= '<th>' . $meta['name'] . '</th>';
                     }
-                    $html .= '</tr>';
+
+                    foreach ($qry->fetchAll() as $row) {
+                        $html .= '<tr>';
+                        //Parcourt le second array
+                        foreach ($row as $key => $val) {
+                            $html .= '<td>' . $val . '</td>';
+                        }
+                        $html .= '</tr>';
+                    }
+
+                    $html .= '</tbody></table>';
+
+                    echo $html;
+                } catch (PDOException $err) {
+                    echo $err->getMessage();
                 }
-
-                $html .= '</tbody></table>';
-
-                echo $html;
-            } catch (PDOException $err) {
-                echo $err->getMessage();
+            } else {
             }
-        } else {
-        }
-        ?>
-
+            ?>
+        </section>
     </section>
 </main>
 <?php
