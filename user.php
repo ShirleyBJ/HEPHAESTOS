@@ -15,6 +15,11 @@
         <p>Bienvenue <?php echo $_SESSION['prenom']; ?></p>
     </header>
     <main>
+    <?php
+    include_once("assets/php/template/template_menu-user.php");
+    ?>
+    <section class="block__user-data">
+    </section>
     </main>
     <?php 
     alert("Connexion réussie !");
