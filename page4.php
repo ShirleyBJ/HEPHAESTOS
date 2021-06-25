@@ -36,8 +36,7 @@
                     <h2>Parlon-en ...</h2>
                 </span>
                 <div class="ctc_form">
-                    
-                    <form action="action.php">
+                    <form action="" method="post">
                         <h3 class="ctc_title">Formulaire de contact</h3>
                         <div class="inline"><i class="fas fa-user ctc-user-form"></i><input
                                 type="text" name="name" id="name" placeholder=" Votre nom " class="npt__ctc--backgd npt__ctc--style"></div>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once('../inc/constants.inc.php');
+include_once('../inc/connexion.php');
 include_once('../inc/alert.inc.php');
 // Nettoie les données passées dans POST : htmlspecialchars
 $mail = (isset($_POST['email']) && !empty($_POST['email'])) ? htmlspecialchars($_POST['email']) : null;
@@ -9,10 +10,7 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
 
     // Connexion
     try{
-        $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
-        // Gestion des attributs de la connexion : exception et retour 
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $conn= connection();
         // Préparation requête : paramétrage pour éviter injections SQL
         $qry = $conn->prepare('SELECT * FROM employe WHERE email= ? AND mot_de_passe= ?');
         $qry->execute(array($mail,$pass));

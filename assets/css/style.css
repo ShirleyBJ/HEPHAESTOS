@@ -876,7 +876,7 @@ border-bottom: 5px solid red;
     flex-direction: row;
 }
 
-.ctc_form input,label{
+.ctc_form input {
     margin: 0.5em;
     padding:0.5em;
     border-bottom: 1px solid black;
@@ -1092,7 +1092,7 @@ border-bottom: 5px solid red;
 .user-account{
     display:flex;
     justify-content: space-around;
-    width: auto;
+    /* width: auto; */
 }
 
 .menu__user-account{
@@ -1149,8 +1149,12 @@ border-bottom: 5px solid red;
 .array__manage thead{
     background-color: #FFC72C;
     font-size: 18px;
-}
+} 
 
+/**Main user - infos personnelles*/
+.user-admin__info{
+    background-color: whitesmoke;
+}
 
 /*! 5.0 - ASIDE*/
 

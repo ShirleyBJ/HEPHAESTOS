@@ -1,5 +1,6 @@
 <?php
 include_once('../inc/constants.inc.php');
+include_once('../inc/connection.php');
 echo 'Traitement inscription';
 // echo '<pre>';
 // var_dump($_POST);
@@ -29,11 +30,7 @@ $pswd = isset($_POST['pswdSuscribe']) ? $_POST['pswdSuscribe'] : '';
 
 //Teste si le mail n'existe pas déja
 try{
-    $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
-    //Gestion des attributs de la connexion et retour du select
-    $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION).
-    $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
-    //Test si le mail n'existe pas déja
+    $conn = connection();
     $sql = 'SELECT COUNT(*) AS nb FROM client WHERE email=?'; //paramétrage anonyme
     //Prépare la réquête - éviter les injections sql
     $qry = $conn->prepare($sql);
