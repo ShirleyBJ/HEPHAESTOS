@@ -1,6 +1,6 @@
 <?php
 include_once('../inc/constants.inc.php');
-include_once('../inc/connection.php');
+include_once('../inc/connection.inc.php');
 echo 'Traitement inscription';
 // echo '<pre>';
 // var_dump($_POST);

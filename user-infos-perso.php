@@ -3,14 +3,23 @@ session_start();
 include_once("assets/php/template/template_top.php");
 include_once("assets/php/template/template_nav.php");
 include_once("assets/php/inc/alert.inc.php");
-include_once("assets/php/inc/connection.php");
-//TODO: Vérifier d'ou provient la variable et afficher infos en fonction client/employes
+include_once("assets/php/inc/connection.inc.php");
+include_once("assets/php/inc/whoIsConnected.inc.php");
+
+//Vérifie qu'on a bien une variable de session active - user connecté
 if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     $email = $_SESSION['email'];
+    $user = whoIsConnected($email);
     try{
         $conn = connection();
-        //Préparation de la requête: paramétrage poour éviter injection sql
-        $sql = 'SELECT * FROM client WHERE email=?';
+        //Préparation de la requête: paramétrage pour éviter injection sql
+        //En fonction du user connecté, la requete sql change
+        if($user == 'Employe'){
+            $sql = 'SELECT * FROM employe WHERE email=?';
+        } else{
+            $sql = 'SELECT * FROM client WHERE email=?';
+        }
+        
         $qry = $conn->prepare($sql);
         //Exécution de la requête
         $qry->execute(array($email));
@@ -18,6 +27,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
         // echo '<pre>';
         // var_dump($row);
         // echo '</pre>';
+        //Si le retour n'est pas vide alors on récupére les données
         if(!empty($row)){
             $lastName =  $row['nom'];
             $firstName = $row['prenom'];
@@ -28,7 +38,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
             $mail = $row['email'];
             $pswd = $row['mot_de_passe'];
         }
-        //Test contenu des variable
+        //Test contenu des variables
         // echo $lastName; 
         // echo $firstName; 
         // echo $adress; 
@@ -44,7 +54,16 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
 ?>
 <!--HEADER-->
 <header class="header__acount">
-    <h1>ESPACE ADMINISTRATEUR</h1>
+    <h1>ESPACE 
+        <?php 
+        //Affichage du type d'espace en fonction de l'user connecté
+            if($user == 'Employe'){
+                echo 'ADMINISTRATEUR';
+            } else{
+                echo 'CLIENT';
+            }
+        ?>
+    </h1>
     <!-- <p>Bienvenue <?php echo $_SESSION['prenom']; ?></p> -->
 </header>
 <main class="user-account">
@@ -55,6 +74,9 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
         <section class="user-admin user-admin__info">
             <form action="user-infos-perso.php" method="post">
                 <h2>Mes informations personelles</h2>
+                <h3>
+                    <?php echo $user; ?>
+                </h3>
                 <div>
                     <label for ="civilite"> Civilité:</label>
                     <select name="civilite" id="civilite">

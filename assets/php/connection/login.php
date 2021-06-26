@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('../inc/constants.inc.php');
-include_once('../inc/connexion.php');
+include_once('../inc/connection.inc.php');
 include_once('../inc/alert.inc.php');
 // Nettoie les données passées dans POST : htmlspecialchars
 $mail = (isset($_POST['email']) && !empty($_POST['email'])) ? htmlspecialchars($_POST['email']) : null;
