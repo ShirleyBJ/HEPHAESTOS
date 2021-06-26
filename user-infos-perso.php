@@ -71,7 +71,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     ?>
     <section class="block__user-admin">
         <section class="user-admin user-admin__info">
-            <form action="user-infos-perso.php" method="post">
+            <form action="" method="post">
                 <h2>Mes informations personelles</h2>
                 <h3>
                     <?php echo $user; ?>

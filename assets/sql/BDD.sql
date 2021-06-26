@@ -49,6 +49,7 @@ CREATE TABLE categorie_produit(
 
 CREATE TABLE employe(
     numero_employe INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    civilite VARCHAR(5) NOT NULL,
     nom VARCHAR(60) NOT NULL,
     prenom VARCHAR(60) NOT NULL,
     adresse VARCHAR(60) NOT NULL,
@@ -75,6 +76,7 @@ CREATE TABLE produit(
     code_categorie INT NOT NULL,
     unites_stock INTEGER AS (quantite - unites_commandes),
     unites_commandes INTEGER NOT NULL DEFAULT 0,
+    img_produit VARCHAR(50) NOT NULL,
     CONSTRAINT fk_no_fournisseur 
     FOREIGN KEY(no_fournisseur) REFERENCES fournisseur(no_fournisseur),
     CONSTRAINT fk_code_categorie
@@ -104,21 +106,21 @@ CREATE TABLE commande(
 
 
 /*SQL : Insert into employe table*/
-INSERT INTO employe (numero_employe,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe,date_naissance,fonction,rend_compte,date_embauche, date_fin_contrat)
-	VALUES('','Berchel','Shirley','5 rue du moulin','60310','Beaulieu-les-fontaines','0627931041','berchel.shirley@gmail.com','Elise1601#','1996-09-19','gérant','','2021/01/04',' '),
-    ('','Smith','Maze','11 rue DownWorld','00000','HellCity','0685954565','maze.smith@gmail.com','first','1994-06-09','Garagiste','Gérant','2021/01/04','-'),
-    ('','Stones','Damon','Place de la grande ceinture','12563','Midgard','0789652622','damon.stones@gmail.com','second','1990-01-25','Garagiste','Gérant','2021/01/04','-'),
-    ('','Creed','Elijah','41 rue de la libération','69566','Haven','0645178293','elijah.creed@gmail.com','third','1988-05-13','Garagiste','Gérant','2021/01/04','-'),
-    ('','Seen','Minerva','5 envolée de la lance argentée','12125','Olympia','0745698245','minerva.seen@gmail.com','fourth','1991-08-20','Secrétaire','Gérant','2021/01/04','-');
+INSERT INTO employe (numero_employe,civilite,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe,date_naissance,fonction,rend_compte,date_embauche, date_fin_contrat)
+	VALUES('','Mme','Berchel','Shirley','5 rue du moulin','60310','Beaulieu-les-fontaines','0627931041','berchel.shirley@gmail.com','Elise1601#','1996-09-19','gérant','','2021/01/04',' '),
+    ('','Mme','Smith','Maze','11 rue DownWorld','00000','HellCity','0685954565','maze.smith@gmail.com','first','1994-06-09','Garagiste','Gérant','2021/01/04','-'),
+    ('','Mr','Stones','Damon','Place de la grande ceinture','12563','Midgard','0789652622','damon.stones@gmail.com','second','1990-01-25','Garagiste','Gérant','2021/01/04','-'),
+    ('','Mr','Creed','Elijah','41 rue de la libération','69566','Haven','0645178293','elijah.creed@gmail.com','third','1988-05-13','Garagiste','Gérant','2021/01/04','-'),
+    ('','Mme','Seen','Minerva','5 envolée de la lance argentée','12125','Olympia','0745698245','minerva.seen@gmail.com','fourth','1991-08-20','Secrétaire','Gérant','2021/01/04','-');
 
 
 /*SQL : Insert into employe table*/
-INSERT INTO client(Numero_client,Civilite,Nom,Prenom,Adresse,CP,Ville,Telephone,Email,mot_de_passe)
-	VALUES ('1','Mme','Igaî','Mnévis','Avenue des Pharaons',56892,'Siwa','0632589475','mnevis.igai@yahoo.com','secret'),
-    ('2','Mr','Velch','Hélios','Place de la grandeur',11111,'Olympia','0689526341','helios.velch@hotmail.fr','123456'),
-    ('3','Mr','Laran','Phénix','3 boulevard des cendres',45624,'Enflammée-sur-fin','0745632185','phenix.laran@outlook.com','helloWorld'),
-    ('4','Mme','Rind','Erda','5 cote de Mjolnir',25364,'Bifrost','0632589471','erda.rind@gmail.com','000000'),
-    ('5','Mme','Od','Saegming','Place du grand Asgard',61455,'Valhalla','0635896547','saegming.od@hotmail.com','password');
+INSERT INTO client(numero_client,civilite,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe)
+	VALUES ('','Mme','Igaî','Mnévis','Avenue des Pharaons',56892,'Siwa','0632589475','mnevis.igai@yahoo.com','secret'),
+    ('','Mr','Velch','Hélios','Place de la grandeur',11111,'Olympia','0689526341','helios.velch@hotmail.fr','123456'),
+    ('','Mr','Laran','Phénix','3 boulevard des cendres',45624,'Enflammée-sur-fin','0745632185','phenix.laran@outlook.com','helloWorld'),
+    ('','Mme','Rind','Erda','5 cote de Mjolnir',25364,'Bifrost','0632589471','erda.rind@gmail.com','000000'),
+    ('','Mme','Od','Saegming','Place du grand Asgard',61455,'Valhalla','0635896547','saegming.od@hotmail.com','password');
 
 
 /*SQL : Insert into categorie produit table*/
@@ -132,7 +134,7 @@ VALUES (1,'Freinage','Piéces mécaniques'),
 (7,'Bougies et piéces d-allumage','Piéces mécaniques'),
 (8,'Embrayage','Piéces mécaniques'),
 (9,'Climatisation','Piéces mécaniques'),
-(10,'Refroidissemnt et chauffage','Piéces mécaniques'),
+(10,'Refroidissement et chauffage','Piéces mécaniques'),
 (11,'Carroserie','Piéces mécaniques'),
 (12,'Alternateur,Démarreur','Piéces mécaniques'),
 (13,'Filtre','Piéces entretien courant'),
@@ -160,9 +162,10 @@ VALUES(1,'BigStar Car','0284 Neha Dale','25180','Lawrence','(44) 64044-8876','bi
 (4,'Dr Rides','8303 Jacobi Unions','51979','Boise City','(28) 62505-6753','dr-rides@hotmail.com'),
 (5,'Phenom Rolling','9148 Purdy Island','55144','Wichita Falls','(82) 06438-6047','phenom_rolling@free.fr');
 
-/*SQL : Insert into produit table*/
+/*SQL : Insert into produit table - old table*/
 INSERT INTO produit (reference_produit,nom_produit,no_fournisseur,quantite,prix_unitaire,code_categorie,unites_commandes)
 VALUES 
+(1,'Moteur',2,100,55.99,1,10),
 (2,'Plaquette de frein arriére',2,100,39.95,1,0),
 (3,'Disque de frein avant',3,100,50.95,1,0),
 (4,'Disque de frein arriére',1,100,50.95,1,0),
@@ -255,6 +258,20 @@ VALUES
 (89,'Volant moteur',4,100,388.00,7,0),
 (90,'Volant moteur flexible',4,100,416.95,7,0)
 ;
+
+/*SQL : Insert into produit table - old table*/
+INSERT INTO produit (reference_produit,nom_produit,no_fournisseur,quantite,prix_unitaire,code_categorie,unites_commandes,img_produit)
+VALUES ('','Moteur',1,45,360.95,6,3,'moteur.jpg'),
+('','Rétrovisseurs',2,75,49.95,16,5,'retro-droit.jpg'),
+('','Pot d\'échappement',3,25,459.50,4,0,'pot-echappement.jpg'),
+('','Essuie-glace',4,35,25.95,15,0,'essuie-glace.jpg'),
+('','Courroies de distribution',5,35,65,6,0,'courroies.jpg'),
+('','Rétrovisseurs vintage',4,10,250.75,16,0,'retro-vintage.jpg'),
+('','Pneu',3,50,70.50,5,0,'car_wheel.jpg'),
+('','Feux',2,50,39.95,14,0,'feux.jpg'),
+('','Jauge de vitesse',1,10,120,26,0,'speedometer.jpg'),
+('','Volant',2,30,95.95,5,0,'YCAR.jpg');
+
 
 /*SQL : Insert into commande table*/
 INSERT INTO commande (numero_commande,date_commande,date_retrait,numero_client,numero_employe,reference_produit,quantite,prix_unitaire)
