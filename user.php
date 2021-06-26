@@ -2,11 +2,9 @@
     session_start();
     include("assets/php/template/template_top.php");
     include("assets/php/template/template_nav.php");
-    include("assets\php\inc\alert.inc.php");
 
     //Vérifie si utilisateur connecté, sinon redirection vers page connexion
     if(isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])){
-        // alert("Connexion réussie !");
     } else{
         header('location:page5.php');
     }

@@ -2,11 +2,6 @@
     session_start();
     include("assets/php/template/template_top.php");
     include("assets/php/template/template_nav.php");
-    //*TODO: Demander à Dorian -> comment rediriger bon user sur accueil compte quand clique sur icône si 2 pages différente pour client et employe et pas moyen de différencier.
-    
-    if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])){
-        header('location: ');
-    }
 ?>
     <!--HEADER-->
     <header class="header_account">

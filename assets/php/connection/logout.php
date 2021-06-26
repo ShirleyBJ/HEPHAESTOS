@@ -7,7 +7,6 @@ include_once('../inc/alert.inc.php');
 unset($_SESSION['prenom']);
 if(session_destroy()){
     header('location: ../../../page5.php');
-    alert("Vous êtes bien déconnnectés ! ");
 }else{
     echo "Déconnexion impossible ! ";
 }

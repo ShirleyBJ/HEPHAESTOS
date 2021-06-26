@@ -12,7 +12,7 @@ include("assets/php/inc/alert.inc.php");
 </header>
 <main class="user-account">
     <?php
-    include_once("assets/php/template/template_menu-admin.php");
+    include_once("assets/php/template/template_menu-user.php");
     ?>
     <section class="block__user-admin">
         <section class="user-admin">

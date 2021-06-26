@@ -12,11 +12,9 @@ function whoIsConnected($var){
         $qry->execute(array($var));
             if($qry->rowCount() === 1){
                 $user = 'Employe';
-                echo $user;
                 return $user;
             } else {
                 $user = 'Client';
-                echo $user;
                 return $user;
             }
     } catch(PDOException $err){

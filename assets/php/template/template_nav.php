@@ -3,8 +3,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-//**TODO: Vérifier pourquoi le chemin vers dossier include ne fonctionne pas/
-include_once('constants.inc.php');
+include_once('assets/php/inc/constants.inc.php');
 ?>
 <nav id="desktop_menu">
     <a href="index.php"><img class="logo_nav" src="assets/img/logoHephaestos.png" alt="Logo du garage Hephaestos"></a>

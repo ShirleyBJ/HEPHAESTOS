@@ -2,7 +2,6 @@
 session_start();
 include_once("assets/php/template/template_top.php");
 include_once("assets/php/template/template_nav.php");
-include_once("assets/php/inc/alert.inc.php");
 include_once("assets/php/inc/connection.inc.php");
 include_once("assets/php/inc/whoIsConnected.inc.php");
 
@@ -68,7 +67,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
 </header>
 <main class="user-account">
     <?php
-    include_once("assets/php/template/template_menu-admin.php");
+    include_once("assets/php/template/template_menu-user.php");
     ?>
     <section class="block__user-admin">
         <section class="user-admin user-admin__info">

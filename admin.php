@@ -1,13 +1,15 @@
 <?php
 session_start();
+
+include("assets/php/template/template_top.php");
+include("assets/php/template/template_nav.php");
+include("assets\php\inc\alert.inc.php");
+
 //Vérifie si utilisateur connecté sinon redirection
 if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])){
 } else{
     header('location:page5.php');
 }
-include("assets/php/template/template_top.php");
-include("assets/php/template/template_nav.php");
-include("assets\php\inc\alert.inc.php");
 // alert("Connexion réussie !");
 ?>
 <!--HEADER-->
@@ -16,7 +18,7 @@ include("assets\php\inc\alert.inc.php");
 </header>
 <main class="user-account">
     <?php
-    include_once("assets/php/template/template_menu-admin.php");
+    include_once("assets/php/template/template_menu-user.php");
     ?>
     <section class="block__user-data">
     </section>
