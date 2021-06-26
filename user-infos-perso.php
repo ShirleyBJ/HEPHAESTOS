@@ -28,6 +28,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
         // echo '</pre>';
         //Si le retour n'est pas vide alors on récupére les données
         if(!empty($row)){
+            $civilite = $row['civilite'];
             $lastName =  $row['nom'];
             $firstName = $row['prenom'];
             $adress = $row['adresse'];
@@ -38,6 +39,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
             $pswd = $row['mot_de_passe'];
         }
         //Test contenu des variables
+        // echo $civilite;
         // echo $lastName; 
         // echo $firstName; 
         // echo $adress; 
@@ -79,9 +81,18 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                 <div>
                     <label for ="civilite"> Civilité:</label>
                     <select name="civilite" id="civilite">
-                        <option value="default" disabled selected>Choisir...</option>
-                        <option value="Mme">Mme.</option>
-                        <option value="Mr">Mr.</option>
+                        <option value="<?php $civilite; ?>" selected>
+                            <?php
+                                if($civilite = "Mme"){
+                                    echo "Mme";
+                                } elseif($civilite == "Mr"){
+                                    echo "Mr";
+                                } else{
+                                    echo "Choisir";
+                                }
+                            ?>
+                        </option>
+                        <option value="<?php if($civilite == "Mme"){echo "Mr";}?>"><?php if($civilite == "Mme"){echo "Mr";}?></option>
                     </select>
                 </div>
                 <div>
@@ -108,12 +119,16 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                     <label for="tel">Téléphone : </label>
                     <input type="tel" name="tel" id="tel" value="<?php echo $phone;?>">
                 </div>
-                <div class="block-suscribe__npt--style">
+                <div class="">
                     <label for="email">Email : </label>
                     <input type="email" name="email" id="email" value="<?php echo $mail;?>">
                 </div>
                 <div>
                     <label for="pswd"> Mot de passe : </label>
+                    <input type="password" name="pswd" id="pswd" value="<?php echo $pswd;?>">
+                </div>
+                <div>
+                    <label for="pswd"> Confirmer le mot de passe: </label>
                     <input type="password" name="pswd" id="pswd" value="<?php echo $pswd;?>">
                 </div>
                 <input type="submit" value="Modifier">
