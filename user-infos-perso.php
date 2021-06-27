@@ -51,6 +51,8 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     }catch(PDOException $err){
         echo $err->getMessage();
     }
+} else{
+    header('location : page5.php');
 }
 ?>
 <!--HEADER-->
@@ -73,7 +75,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     ?>
     <section class="block__user-admin">
         <section class="user-admin user-admin__info">
-            <form action="" method="post">
+            <form action="assets/php/utils/update_data.php" method="post">
                 <h2>Mes informations personelles</h2>
                 <h3>
                     <?php echo $user; ?>

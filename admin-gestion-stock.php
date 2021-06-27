@@ -34,7 +34,7 @@ include("assets/php/inc/alert.inc.php");
                     <!--En tête tableau-->
                     <tr>
                         <!--Ligne du tableau-->
-                        <th colspan="8">Liste des produits</th>
+                        <th colspan="9">Liste des produits</th>
                         <!--Colonne du tableau-->
                     </tr>
                 </thead>

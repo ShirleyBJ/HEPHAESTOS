@@ -1,11 +1,6 @@
 <?php
 include_once('../inc/constants.inc.php');
 include_once('../inc/connection.inc.php');
-echo 'Traitement inscription';
-// echo '<pre>';
-// var_dump($_POST);
-// echo '</pre>';
-
 
 //Récuperer les données
 $civilite = isset($_POST['civilite']) ? $_POST['civilite'] : '';
@@ -45,10 +40,9 @@ try{
         $sql = 'INSERT INTO client(civilite,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe) VALUES(?,?,?,?,?,?,?,?,?)';
         $qry = $conn->prepare($sql);
         $qry->execute(array($civilite,$lastName,$firstName,$adress,$cp,$city,$tel,$email,$pswd));
-        //déconnexion de la varible
+        //déconnexion de la variable
         unset($conn);
         header('location:login.php?m=ccok');
-        echo 'Inscription réussi ! ';
     }
 }catch(PDOException $err){
     $err->getMessage();

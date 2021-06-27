@@ -18,6 +18,7 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
             $row = $qry->fetch();
             $_SESSION['prenom'] = $row['prenom'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $row['numero_employe'];
             // var_dump($row);
             header('location: ../../../admin.php');
         } elseif($qry->rowCount()=== 0){
@@ -26,10 +27,10 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
             $row = $qry->fetch();
             $_SESSION['prenom'] = $row['prenom'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $row['numero_client'];
             // var_dump($row);
             header('location: ../../../user.php');
         } else {
-            alert('User inconnu');
             header('location: ../../../page5.php');
         }
     }catch(PDOException $err){
