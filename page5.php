@@ -1,7 +1,8 @@
 <?php
     session_start();
-    include("assets/php/template/template_top.php");
-    include("assets/php/template/template_nav.php");
+    include_once("assets/php/template/template_top.php");
+    include_once("assets/php/template/template_nav.php");
+    include_once("assets/php/inc/alert.inc.php");
 ?>
     <!--HEADER-->
     <header class="header_account">

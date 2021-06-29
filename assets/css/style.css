@@ -1128,18 +1128,27 @@ border-bottom: 5px solid red;
     overflow-y: scroll;
 }
 
+.user-admin__employe{
+    width: 90%;
+    overflow-x: scroll;
+}
+
 .array__manage {
     border-collapse: collapse;
     background-color: silver;
+    width: auto;
 }
 
 .array__manage td,th{
     border: 1px solid #ddd;
-    /* padding: 10px; */
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 .array__manage tr:nth-child(even){
     background-color: #f2f2f2;
+    padding: 0;
+    margin: 0;
 }
 
 .array__manage tr:hover{
@@ -1149,12 +1158,33 @@ border-bottom: 5px solid red;
 .array__manage thead{
     background-color: #FFC72C;
     font-size: 18px;
-} 
+}
 
 /**Main user - infos personnelles*/
 .user-admin__info{
     background-color: whitesmoke;
+    padding: 15px;
+    width: 35%;
+    border-radius: 15px;
 }
+
+.user-admin__info h2{
+    border:2px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.user-admin__info label{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user-admin__info--spacing{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+
 
 /*! 5.0 - ASIDE*/
 

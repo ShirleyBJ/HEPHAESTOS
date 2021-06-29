@@ -15,7 +15,7 @@ include("assets/php/inc/alert.inc.php");
     include_once("assets/php/template/template_menu-user.php");
     ?>
     <section class="block__user-admin">
-        <section class="user-admin">
+        <section class="user-admin__employe">
             <?php
             if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])) {
                 // echo 'Utilisateur connecté';
@@ -26,11 +26,11 @@ include("assets/php/inc/alert.inc.php");
                     // $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
                     //Préparation de la requête : paramétrage pour eviter injection SQL
-                    $qry = $conn->prepare('SELECT numero_employe,nom,prenom,adresse,cp,ville,telephone,email,date_naissance,fonction,rend_compte,date_embauche,date_fin_contrat
+                    $qry = $conn->prepare('SELECT numero_employe,nom,prenom,adresse,cp,ville,telephone,email,date_naissance,fonction,rend_compte,date_embauche, date_fin_contrat 
                     FROM employe');
                     $qry->execute();
 
-                    $html = '<table class= "array__manage">
+                    $html = '<table class= "array__manage array__employe">
                     <thead>
                         <!--En tête tableau-->
                         <tr>

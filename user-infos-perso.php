@@ -75,12 +75,12 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     ?>
     <section class="block__user-admin">
         <section class="user-admin user-admin__info">
-            <form action="assets/php/utils/update_data.php" method="post">
+            <form action="assets/php/utils/update_data.php" method="post" >
                 <h2>Mes informations personelles</h2>
-                <h3>
+                <!-- <h3>
                     <?php echo $user; ?>
-                </h3>
-                <div>
+                </h3> -->
+                <div class="user-admin__info--spacing">
                     <label for ="civilite"> Civilité:</label>
                     <select name="civilite" id="civilite">
                         <option value="<?php $civilite; ?>" selected>
@@ -97,39 +97,39 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                         <option value="<?php if($civilite == "Mme"){echo "Mr";}?>"><?php if($civilite == "Mme"){echo "Mr";}?></option>
                     </select>
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="lastName"> Nom : </label>
                     <input type="text" name="lastName" id="lastName" value="<?php echo $lastName;?>">
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="firstName" > Prénom : </label>
                     <input type="text" name="firstName" id="firstName" value="<?php echo $firstName;?>">
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="adress">Adresse : </label>
                     <input type="text" name="adress" id="adress" value="<?php echo $adress;?>">
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="CP">CP : </label>
                     <input type="text" name="CP" id="CP" value="<?php echo $cp;?>">
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="ville">Ville : </label>
                     <input type="text" name="ville" id="ville" value="<?php echo $city;?>">
                 </div>
-                <div class="">
+                <div class="user-admin__info--spacing">
                     <label for="tel">Téléphone : </label>
                     <input type="tel" name="tel" id="tel" value="<?php echo $phone;?>">
                 </div>
-                <div class="">
+                <div class="user-admin__info--spacing">
                     <label for="email">Email : </label>
                     <input type="email" name="email" id="email" value="<?php echo $mail;?>">
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="pswd"> Mot de passe : </label>
                     <input type="password" name="pswd" id="pswd" value="<?php echo $pswd;?>">
                 </div>
-                <div>
+                <div class="user-admin__info--spacing">
                     <label for="pswd"> Confirmer le mot de passe: </label>
                     <input type="password" name="pswd" id="pswd" value="<?php echo $pswd;?>">
                 </div>
