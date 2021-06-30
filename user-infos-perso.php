@@ -56,17 +56,9 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
 }
 ?>
 <!--HEADER-->
-<header class="header__acount">
-    <h1>ESPACE 
-        <?php 
-        //Affichage du type d'espace en fonction de l'user connecté
-            if($user == 'Employe'){
-                echo 'ADMINISTRATEUR';
-            } else{
-                echo 'CLIENT';
-            }
-        ?>
-    </h1>
+<?php  
+    include_once("assets/php/template/template_header-user.php");
+?>
     <!-- <p>Bienvenue <?php echo $_SESSION['prenom']; ?></p> -->
 </header>
 <main class="user-account">

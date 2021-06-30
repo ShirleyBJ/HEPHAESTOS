@@ -20,7 +20,7 @@ $pass = (isset($_POST['passwd']) && !empty($_POST['email'])) ? htmlspecialchars(
             $_SESSION['email'] = $row['email'];
             $_SESSION['id'] = $row['numero_employe'];
             // var_dump($row);
-            header('location: ../../../admin.php');
+            header('location: ../../../user.php');
         } elseif($qry->rowCount()=== 0){
             $qry = $conn->prepare('SELECT * FROM client WHERE email= ? AND mot_de_passe= ?');
             $qry->execute(array($mail,$pass));

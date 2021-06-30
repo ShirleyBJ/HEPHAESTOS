@@ -6,10 +6,9 @@ include("assets/php/inc/alert.inc.php");
 // alert("Connexion réussie !");
 ?>
 <!--HEADER-->
-<header class="header__acount">
-    <h1>ESPACE ADMINISTRATEUR</h1>
-    <!-- <p>Bienvenue <?php echo $_SESSION['prenom']; ?></p> -->
-</header>
+<?php  
+    include_once("assets/php/template/template_header-user.php");
+?>
 <main class="user-account">
     <?php
     include_once("assets/php/template/template_menu-user.php");

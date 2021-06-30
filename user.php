@@ -10,9 +10,9 @@
     }
 ?>  
 <!--HEADER-->
-    <header class="header__acount">
-        <h1>Espace Client</h1>
-    </header>
+    <?php  
+    include_once("assets/php/template/template_header-user.php");
+    ?>
     <main>
     <?php
     include_once("assets/php/template/template_menu-user.php");
