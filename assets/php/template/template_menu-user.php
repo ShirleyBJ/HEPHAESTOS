@@ -11,6 +11,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
         </h3>
         <p><a href="user-infos-perso.php">Mes informations personelles</a></p>
         <p> Messagerie</p>
+        <p> Mes commandes</p>
         <?php
                 if($user == 'Employe'){
                         echo "<p><a href=\"admin-gestion-client.php\">Gestion des clients</a></p>

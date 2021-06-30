@@ -1124,8 +1124,6 @@ border-bottom: 5px solid red;
 
 .user-admin__data{
     width: auto;
-    height: 400px;
-    overflow-y: scroll;
 }
 
 .user-admin__employe{

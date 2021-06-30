@@ -2,16 +2,16 @@
 include_once('../inc/constants.inc.php');
 include_once('../inc/connection.inc.php');
 
-//Récuperer les données
-$civilite = isset($_POST['civilite']) ? $_POST['civilite'] : '';
-$lastName = isset($_POST['lastNameSuscribe']) ? $_POST['lastNameSuscribe'] : '';
-$firstName = isset($_POST['firstNameSuscribe']) ? $_POST['firstNameSuscribe'] : '';
-$adress = isset($_POST['adressSuscribe']) ? $_POST['adressSuscribe'] : '';
-$cp = isset($_POST['CPSuscribe']) ? $_POST['CPSuscribe'] : '';
-$city = isset($_POST['villeSuscribe']) ? $_POST['villeSuscribe'] : '';
-$tel = isset($_POST['telSuscribe']) ? $_POST['telSuscribe'] : '';
-$email = isset($_POST['mailSuscribe']) ? $_POST['mailSuscribe'] : '';
-$pswd = isset($_POST['pswdSuscribe']) ? $_POST['pswdSuscribe'] : '';
+//Récuperer les données - protection contre attaque XSS
+$civilite = isset($_POST['civilite']) ? htmlspecialchars($_POST['civilite']) : '';
+$lastName = isset($_POST['lastNameSuscribe']) ? htmlspecialchars($_POST['lastNameSuscribe']) : '';
+$firstName = isset($_POST['firstNameSuscribe']) ? htmlspecialchars($_POST['firstNameSuscribe']) : '';
+$adress = isset($_POST['adressSuscribe']) ? htmlspecialchars($_POST['adressSuscribe']) : '';
+$cp = isset($_POST['CPSuscribe']) ? htmlspecialchars($_POST['CPSuscribe'] ): '';
+$city = isset($_POST['villeSuscribe']) ? htmlspecialchars($_POST['villeSuscribe']) : '';
+$tel = isset($_POST['telSuscribe']) ? htmlspecialchars($_POST['telSuscribe']) : '';
+$email = isset($_POST['mailSuscribe']) ? htmlspecialchars($_POST['mailSuscribe']) : '';
+$pswd = isset($_POST['pswd']) ? htmlspecialchars($_POST['pswd']) : '';
 
 // echo $civilite;
 // echo $lastName;

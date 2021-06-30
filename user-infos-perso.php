@@ -67,7 +67,7 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     ?>
     <section class="block__user-admin">
         <section class="user-admin user-admin__info">
-            <form action="assets/php/utils/update_data.php" method="post" >
+            <form action="assets/php/utils/update_data.php" method="post" id="register">
                 <h2>Mes informations personelles</h2>
                 <!-- <h3>
                     <?php echo $user; ?>
@@ -75,18 +75,28 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                 <div class="user-admin__info--spacing">
                     <label for ="civilite"> Civilité:</label>
                     <select name="civilite" id="civilite">
-                        <option value="<?php $civilite; ?>" selected>
+                        <option value="<?php if($civilite=="Mme"){echo "Mme";}elseif($civilite == "Mr"){
+                                    echo "Mr";
+                                } ?>" selected>
                             <?php
-                                if($civilite = "Mme"){
+                                if($civilite == "Mme"){
                                     echo "Mme";
                                 } elseif($civilite == "Mr"){
                                     echo "Mr";
-                                } else{
-                                    echo "Choisir";
+                                }
+                            ?>
+                        </option required>
+                        <option value="<?php if($civilite=="Mme"){echo "Mr";}elseif($civilite == "Mr"){
+                                    echo "Mme";
+                                }?>">
+                            <?php
+                                if($civilite == "Mme"){
+                                    echo "Mr";
+                                } elseif($civilite == "Mr"){
+                                    echo "Mme";
                                 }
                             ?>
                         </option>
-                        <option value="<?php if($civilite == "Mme"){echo "Mr";}?>"><?php if($civilite == "Mme"){echo "Mr";}?></option>
                     </select>
                 </div>
                 <div class="user-admin__info--spacing">
@@ -122,14 +132,15 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
                     <input type="password" name="pswd" id="pswd" value="<?php echo $pswd;?>">
                 </div>
                 <div class="user-admin__info--spacing">
-                    <label for="pswd"> Confirmer le mot de passe: </label>
-                    <input type="password" name="pswd" id="pswd" value="<?php echo $pswd;?>">
+                    <label for="pswdValidate"> Confirmer le mot de passe: </label>
+                    <input type="password" id="pswdValidate" value="<?php echo $pswd;?>">
                 </div>
                 <input type="submit" value="Modifier">
             </form>
         </section>
     </section>
 </main>
+<script src="assets/js/checkValue.js" defer></script>
 <?php
 include("assets/php/template/template_bottom.php");
 ?>

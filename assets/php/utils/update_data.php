@@ -6,20 +6,20 @@ include_once('../inc/whoIsConnected.inc.php');
 
 if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     $idUser = $_SESSION['id'];
-    $email = $_SESSION['email'];
-    $user = whoIsConnected($email);
+    $mail = $_SESSION['email'];
+    $user = whoIsConnected($mail);
 }
 
 //Récuperer les données
-$civilite = isset($_POST['civilite']) ? $_POST['civilite'] : '';
-$lastName = isset($_POST['lastName']) ? $_POST['lastName'] : '';
-$firstName = isset($_POST['firstName']) ? $_POST['firstName'] : '';
-$adress = isset($_POST['adress']) ? $_POST['adress'] : '';
-$cp = isset($_POST['CP']) ? $_POST['CP'] : '';
-$city = isset($_POST['ville']) ? $_POST['ville'] : '';
-$tel = isset($_POST['tel']) ? $_POST['tel'] : '';
-$email = isset($_POST['email']) ? $_POST['email'] : '';
-$pswd = isset($_POST['pswd']) ? $_POST['pswd'] : '';
+$civilite = isset($_POST['civilite']) ? htmlspecialchars($_POST['civilite']) : '';
+$lastName = isset($_POST['lastName']) ? htmlspecialchars($_POST['lastName']) : '';
+$firstName = isset($_POST['firstName']) ? htmlspecialchars($_POST['firstName']) : '';
+$adress = isset($_POST['adress']) ? htmlspecialchars($_POST['adress']) : '';
+$cp = isset($_POST['CP']) ? htmlspecialchars($_POST['CP']) : '';
+$city = isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : '';
+$tel = isset($_POST['tel']) ? htmlspecialchars($_POST['tel'] ): '';
+$email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
+$pswd = isset($_POST['pswd']) ? htmlspecialchars($_POST['pswd']) : '';
 
 // echo $civilite;
 // echo $lastName;
@@ -37,16 +37,17 @@ if($user == "Employe"){
     $sql = 'UPDATE client SET civilite="'.$civilite.'",nom="'.$lastName.'",prenom="'.$firstName.'",adresse="'.$adress.'",CP="'.$cp.'",ville="'.$city.'",telephone="'.$tel.'",email="'.$email.'",mot_de_passe="'.$pswd.'" WHERE numero_client="'.$idUser.'"';
 }
 
+
 try{
     $conn = connection();
     //Prépare la réquête - éviter les injections sql
     $qry = $conn->prepare($sql);
     //Exécution de la requete
-    $qry->execute(array($civilite,$lastName,$firstName,$adress,$cp,$city,$tel,$email,$pswd,$idUser  ));
+    $qry->execute(array($civilite,$lastName,$firstName,$adress,$cp,$city,$tel,$email,$pswd,$idUser));
     $row = $qry->fetch();
-    //TODO: Faire redirection vers page infos perso + si changement MDP ou email redirection connection.
-}catch(PDOException $err){
-    $err->getMessage();
+    //TODO: si MDP ou PSWD on étè modifié on déconnecte l'utilisatue et on le renvoie vers la page connection autrement redirection vers page accueil user.
+    }catch(PDOException $err){
+        $err->getMessage();
 }
 
 ?>
