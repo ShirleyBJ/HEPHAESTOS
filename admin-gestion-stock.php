@@ -61,6 +61,7 @@ include("assets/php/inc/alert.inc.php");
                     echo $err->getMessage();
                 }
             } else {
+                header('location:page5.php');
             }
             ?>
         </section>
