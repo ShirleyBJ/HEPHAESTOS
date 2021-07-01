@@ -2,15 +2,15 @@
         include("assets/php/template/template_top.php");
         include("assets/php/template/template_nav.php");
         include_once("assets/php/inc/connection.inc.php");
+        
+        try{
         $conn = connection();
         $qry = $conn->prepare('SELECT nom_produit,prix_unitaire,img_produit FROM produit');
         $qry->execute();
         $row=$qry->fetchAll();
-            for ($i=0; $i < sizeof($row); $i++) { 
-                echo $row[$i]['img_produit'];
-                echo $row[$i]['nom_produit'];
-                echo $row[$i]['prix_unitaire'];
-            }
+        } catch(PDOException $err){
+            $err->getMessage();
+        }
     ?>
     <!--HEADER-->
     <header class="header_product">
@@ -21,19 +21,27 @@
         <div class="product__container">
             <section class="main__product-section">
                 <div class="product-section">
-                    <div class="product__card">
-                        <div class="product__img">
-                            <img src="./assets/img/car_wheel.jpg" alt="image d'une roue" class="product__img--size">
-                        </div>
-                        <h5 class="product__title">Pneu</h5>
-                        <div class="product__price">
-                            Prix : <span class="prix-unitaire">$80</span>
-                        </div>
-                        <div class="product__btn">
-                            <button class="btn__reserved">Réserver</button>
-                        </div>
+                    <?php
+                        $html="";
+                        for ($i=0; $i < sizeof($row); $i++) {
+                            $html.="<div class=\"product__card\">
+                            <div class=\"product__img\">
+                                <img src=\"assets/img/". $row[$i]['img_produit']."\" alt=\"image d'une roue\" class=\"product__img--size\">
+                            </div>";
+
+                                $html.= "<h5 class=\"product__title\">". $row[$i]['nom_produit']."</h5>";
+
+                                $html.= "<div class=\"product__price\">
+                                Prix : <span class=\"prix-unitaire\">".$row[$i]['prix_unitaire']." € </span>
+                            </div>";
+                                $html.=  "<div class=\"product__btn\">
+                                <button class=\"btn__reserved\">Réserver</button>
+                            </div>
+                        </div>";
+                        }
+                        echo $html;
+                    ?>
                     </div>
-                </div>
             </section>
             <aside class="aside-product">
                 <div class="aside-container">
