@@ -4,7 +4,7 @@ var validateForm = document.querySelector('#register');
 // console.log(btnValidate);
 
 //Ajout écouteurs
-validateForm.addEventListener('click', function(evt){
+validateForm.addEventListener('submit', function(evt){
     let pass1 = document.getElementById('pswd').value;
     console.log(pass1);
     let pass2 = document.getElementById('pswdValidate').value;

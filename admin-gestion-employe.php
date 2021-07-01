@@ -6,7 +6,6 @@ include("assets/php/inc/alert.inc.php");
 // alert("Connexion réussie !");
 ?>
 <!--HEADER-->
-<!--HEADER-->
 <?php  
     include_once("assets/php/template/template_header-user.php");
 ?>
@@ -20,6 +19,7 @@ include("assets/php/inc/alert.inc.php");
             if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])) {
                 // echo 'Utilisateur connecté';
                 try {
+                    //TODO: Voir pourquoi pas nécessaire de rappeler $conn
                     // $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
                     // // Gestion des attributs de la connexion : exception et retour 
                     // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

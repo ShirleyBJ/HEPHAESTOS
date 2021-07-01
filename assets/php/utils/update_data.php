@@ -8,6 +8,8 @@ if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     $idUser = $_SESSION['id'];
     $mail = $_SESSION['email'];
     $user = whoIsConnected($mail);
+} else{
+    header('location:../../../page5.php');
 }
 
 //Récuperer les données
@@ -29,25 +31,29 @@ $pswd = isset($_POST['pswd']) ? htmlspecialchars($_POST['pswd']) : '';
 // echo $city;
 // echo $tel;
 // echo $email;
+// echo $mail;
 // echo $pswd;
 
-if($user == "Employe"){
-    $sql = 'UPDATE employe SET civilite="'.$civilite.'",nom="'.$lastName.'",prenom="'.$firstName.'",adresse="'.$adress.'",CP="'.$cp.'",ville="'.$city.'",telephone="'.$tel.'",email="'.$email.'",mot_de_passe="'.$pswd.'" WHERE numero_employe="'.$idUser.'"';
-} elseif($user == "Client"){
-    $sql = 'UPDATE client SET civilite="'.$civilite.'",nom="'.$lastName.'",prenom="'.$firstName.'",adresse="'.$adress.'",CP="'.$cp.'",ville="'.$city.'",telephone="'.$tel.'",email="'.$email.'",mot_de_passe="'.$pswd.'" WHERE numero_client="'.$idUser.'"';
-}
-
-
 try{
+    if($user == "Employe"){
+        $sql = 'UPDATE employe SET civilite="'.$civilite.'",nom="'.$lastName.'",prenom="'.$firstName.'",adresse="'.$adress.'",CP="'.$cp.'",ville="'.$city.'",telephone="'.$tel.'",email="'.$email.'",mot_de_passe="'.$pswd.'" WHERE numero_employe="'.$idUser.'"';
+    } else{
+        $sql = 'UPDATE client SET civilite="'.$civilite.'",nom="'.$lastName.'",prenom="'.$firstName.'",adresse="'.$adress.'",CP="'.$cp.'",ville="'.$city.'",telephone="'.$tel.'",email="'.$email.'",mot_de_passe="'.$pswd.'" WHERE numero_client="'.$idUser.'"';
+    }
+
     $conn = connection();
     //Prépare la réquête - éviter les injections sql
     $qry = $conn->prepare($sql);
     //Exécution de la requete
     $qry->execute(array($civilite,$lastName,$firstName,$adress,$cp,$city,$tel,$email,$pswd,$idUser));
-    $row = $qry->fetch();
-    //TODO: si MDP ou PSWD on étè modifié on déconnecte l'utilisatue et on le renvoie vers la page connection autrement redirection vers page accueil user.
+
+    if($mail != $email){
+        unset($mail);
+        header('location:../../../page5.php');
+    }
+    
     }catch(PDOException $err){
-        $err->getMessage();
+        echo $err->getMessage();
 }
 
 ?>

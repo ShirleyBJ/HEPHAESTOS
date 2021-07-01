@@ -1,6 +1,16 @@
     <?php
         include("assets/php/template/template_top.php");
         include("assets/php/template/template_nav.php");
+        include_once("assets/php/inc/connection.inc.php");
+        $conn = connection();
+        $qry = $conn->prepare('SELECT nom_produit,prix_unitaire,img_produit FROM produit');
+        $qry->execute();
+        $row=$qry->fetchAll();
+            for ($i=0; $i < sizeof($row); $i++) { 
+                echo $row[$i]['img_produit'];
+                echo $row[$i]['nom_produit'];
+                echo $row[$i]['prix_unitaire'];
+            }
     ?>
     <!--HEADER-->
     <header class="header_product">
@@ -18,42 +28,6 @@
                         <h5 class="product__title">Pneu</h5>
                         <div class="product__price">
                             Prix : <span class="prix-unitaire">$80</span>
-                        </div>
-                        <div class="product__btn">
-                            <button class="btn__reserved">Réserver</button>
-                        </div>
-                    </div>
-                    <div class="product__card">
-                        <div class="product__img">
-                            <img src="./assets/img/feux.jpg" alt="image d'une roue" class="product__img--size">
-                        </div>
-                        <h5 class="product__title">Feux arriére</h5>
-                        <div class="product__price">
-                            Prix : <span class="prix-unitaire">$180</span>
-                        </div>
-                        <div class="product__btn">
-                            <button class="btn__reserved">Réserver</button>
-                        </div>
-                    </div>
-                    <div class="product__card">
-                        <div class="product__img">
-                            <img src="./assets/img/YCAR.jpg" alt="image d'une roue" class="product__img--size">
-                        </div>
-                        <h5 class="product__title">Volant</h5>
-                        <div class="product__price">
-                            Prix : <span class="prix-unitaire">$250</span>
-                        </div>
-                        <div class="product__btn">
-                            <button class="btn__reserved">Réserver</button>
-                        </div>
-                    </div>
-                    <div class="product__card">
-                        <div class="product__img">
-                            <img src="./assets/img/car-engine.jpg" alt="image d'une roue" class="product__img--size">
-                        </div>
-                        <h5 class="product__title">Moteur</h5>
-                        <div class="product__price">
-                            Prix: <span class="prix-unitaire">$3500</span>
                         </div>
                         <div class="product__btn">
                             <button class="btn__reserved">Réserver</button>
