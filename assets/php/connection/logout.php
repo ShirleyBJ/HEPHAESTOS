@@ -1,5 +1,6 @@
 <?php
-    unset($_SESSION);
+    session_start();
+    unset($_SESSION['prenom']);
     if(session_destroy()){
         header('location: ../../../page5.php');
     }else{
