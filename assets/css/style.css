@@ -1190,6 +1190,11 @@ border-bottom: 5px solid red;
     font-weight: bold;
 }
 
+#block--hidden{
+    display: none;
+    color: whitesmoke;
+}
+
 
 /*! 5.0 - ASIDE*/
 

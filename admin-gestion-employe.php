@@ -58,10 +58,17 @@ include("assets/php/template/template_nav.php");
             ?>
         </section>
         <!--SECTION CRUD of table employe-->
-            <section class="user-admin__btn-crud">
-            <button href="#modal1" class="js-modal"> Ajouter un client </button>
-            <button>Modifier une fiche employé</button>
-            <button>Supprimer un employé</button>
+        <section class="user-admin__btn-crud">
+            <button href="#modal1" class="js-modal"> Ajouter un employé </button>
+            <button class="">Modifier une fiche employé</button>
+            <button id="delete-employe">Supprimer un employé</button>
+        </section>
+        <section id="block--hidden">
+            <form action="assets/php/utils/delete-user.php" method="post">
+                <label for="id">Saisir l'indentifiant de l'employé à supprimer</label>
+                <input type="number" name="id" id="id">
+                <button type="submit" id="validate-btn">Valider</button>
+            </form>
         </section>
         <!--MODAL BOX - AJAX-->
         <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
@@ -70,7 +77,7 @@ include("assets/php/template/template_nav.php");
                 <div class="logo_interSection">
                     <h1 class="modal__title">Ajouter un employé</h1>
                 </div>
-                <form action="" method="post" id="register" class="admin-create-employe__modal">
+                <form action="assets/php/connection/register-employe.php" method="post" id="register" class="admin-create-employe__modal">
                 <div class="user-admin__info--spacing">
                     <label for ="civilite"> Civilité:</label>
                     <select name="civilite" id="civilite">
@@ -112,14 +119,33 @@ include("assets/php/template/template_nav.php");
                     <input type="password" name="pswd" id="pswd" required>
                 </div>
                 <div class="user-admin__info--spacing">
-                    <label for="pswdValidate"> Confirmer le mot de passe: </label>
-                    <input type="password" id="pswdValidate" required>
+                    <label for="dob"> Date de naissance </label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="fonction"> Fonction</label>
+                    <input type="text" id="fonction"  name="fonction" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="supérieur"> Supérieur hiérarchique</label>
+                    <select name="superieur" id="supérieur">
+                        <option value="Gérant" selected>Gérant</option>
+                    </select>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="dEmbauche"> Date d'embauche</label>
+                    <input type="date" id="dEmbauche" name="dEmbauche" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="dFinContrat"> Date de fin de contrat</label>
+                    <input type="date" id="dFinContrat"  name="dFinContrat">
                 </div>
                 <input type="submit" value="Ajouter">
             </form>
             </div>
         </aside>
     </section>
+    <script src="assets/js/hideBlock.js" defer></script>
 </main>
 <?php
 include("assets/php/template/template_bottom.php");
