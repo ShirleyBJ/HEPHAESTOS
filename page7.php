@@ -20,32 +20,32 @@
                     </select>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="lastNameSuscribe" class="align-start"> Nom : </label>
-                    <input type="text" name="lastNameSuscribe" id="lastNameSuscribe" class="align-end" required>
+                    <label for="lastName" class="align-start"> Nom : </label>
+                    <input type="text" name="lastName" id="lastName" class="align-end" required>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="firstNameSuscribe" class="align-start"> Prénom : </label>
-                    <input type="text" name="firstNameSuscribe" id="firstNameSuscribe" class="align-end" required>
+                    <label for="firstName" class="align-start"> Prénom : </label>
+                    <input type="text" name="firstName" id="firstName" class="align-end" required>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="adressSuscribe">Adresse : </label>
-                    <input type="text" name="adressSuscribe" id="adressSuscribe" required>
+                    <label for="adress">Adresse : </label>
+                    <input type="text" name="adress" id="adress" required>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="CPSuscribe">CP : </label>
-                    <input type="text" name="CPSuscribe" id="CPSuscribe" required>
+                    <label for="CP">CP : </label>
+                    <input type="text" name="CP" id="CP" required>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="villeSuscribe">Ville : </label>
-                    <input type="text" name="villeSuscribe" id="villeSuscribe" required>
+                    <label for="ville">Ville : </label>
+                    <input type="text" name="ville" id="ville" required>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="telSuscribe">Téléphone : </label>
-                    <input type="tel" name="telSuscribe" id="telSuscribe" required>
+                    <label for="tel">Téléphone : </label>
+                    <input type="tel" name="tel" id="tel" required>
                 </div>
                 <div class="block-suscribe__npt--style">
-                    <label for="mailSuscribe">Email : </label>
-                    <input type="email" name="mailSuscribe" id="mailSuscribe_" required>
+                    <label for="mail">Email : </label>
+                    <input type="email" name="mail" id="mail" required>
                 </div>
                 <div class="block-suscribe__npt--style">
                     <label for="pswd"> Mot de passe : </label>

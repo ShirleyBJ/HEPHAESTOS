@@ -36,6 +36,7 @@ try {
     }
     // unset($id);
     unset($conn);
+    header('location:admin-gestion-employe.php');
 } catch (PDOException $err) {
     echo $err->getMessage();
 }

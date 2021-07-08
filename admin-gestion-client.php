@@ -94,7 +94,7 @@ include("assets/php/inc/alert.inc.php");
                 <div class="logo_interSection">
                     <h1 class="modal__title">Ajouter un client</h1>
                 </div>
-                <form action="assets/php/connection/register-employe.php" method="post" id="register" class="admin-create-employe__modal">
+                <form action="assets/php/connection/register.php" method="post" id="register" class="admin-create-employe__modal">
                 <div class="user-admin__info--spacing">
                     <label for ="civilite"> Civilité:</label>
                     <select name="civilite" id="civilite">
@@ -128,8 +128,12 @@ include("assets/php/inc/alert.inc.php");
                     <input type="tel" name="tel" id="tel">
                 </div>
                 <div class="user-admin__info--spacing">
-                    <label for="email">Email : </label>
-                    <input type="email" name="email" id="email">
+                    <label for="mail">Email : </label>
+                    <input type="email" name="mail" id="mail">
+                </div>
+                <div class="block-suscribe__npt--style">
+                    <label for="pswd"> Mot de passe : </label>
+                    <input type="password" name="pswd" id="pswd" required>
                 </div>
                 <input type="submit" value="Ajouter">
             </form>

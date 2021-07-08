@@ -1,16 +1,17 @@
 <?php
 include_once('../inc/constants.inc.php');
 include_once('../inc/connection.inc.php');
+include_once('../inc/whoIsConnected.inc.php');
 
 //Récuperer les données - protection contre attaque XSS
 $civilite = isset($_POST['civilite']) ? htmlspecialchars($_POST['civilite']) : '';
-$lastName = isset($_POST['lastNameSuscribe']) ? htmlspecialchars($_POST['lastNameSuscribe']) : '';
-$firstName = isset($_POST['firstNameSuscribe']) ? htmlspecialchars($_POST['firstNameSuscribe']) : '';
-$adress = isset($_POST['adressSuscribe']) ? htmlspecialchars($_POST['adressSuscribe']) : '';
-$cp = isset($_POST['CPSuscribe']) ? htmlspecialchars($_POST['CPSuscribe'] ): '';
-$city = isset($_POST['villeSuscribe']) ? htmlspecialchars($_POST['villeSuscribe']) : '';
-$tel = isset($_POST['telSuscribe']) ? htmlspecialchars($_POST['telSuscribe']) : '';
-$email = isset($_POST['mailSuscribe']) ? htmlspecialchars($_POST['mailSuscribe']) : '';
+$lastName = isset($_POST['lastName']) ? htmlspecialchars($_POST['lastName']) : '';
+$firstName = isset($_POST['firstName']) ? htmlspecialchars($_POST['firstName']) : '';
+$adress = isset($_POST['adress']) ? htmlspecialchars($_POST['adress']) : '';
+$cp = isset($_POST['CP']) ? htmlspecialchars($_POST['CP'] ): '';
+$city = isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : '';
+$tel = isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : '';
+$email = isset($_POST['mail']) ? htmlspecialchars($_POST['mail']) : '';
 $pswd = isset($_POST['pswd']) ? htmlspecialchars($_POST['pswd']) : '';
 
 // echo $civilite;
@@ -40,10 +41,17 @@ try{
         $sql = 'INSERT INTO client(civilite,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe) VALUES(?,?,?,?,?,?,?,?,?)';
         $qry = $conn->prepare($sql);
         $qry->execute(array($civilite,$lastName,$firstName,$adress,$cp,$city,$tel,$email,$pswd));
-        //déconnexion de la variable
-        unset($conn);
-        header('location:login.php?m=ccok');
+        // Redirection
+        if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
+            if($user == 'Employe'){
+                header('location:../../../admin-gestion-client.php');
+            }
+        }else {
+            header('location:../../../page5.php');
+        }
     }
+    //déconnexion de la variable
+    unset($conn);
 }catch(PDOException $err){
     $err->getMessage();
 }
