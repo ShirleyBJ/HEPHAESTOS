@@ -12,7 +12,7 @@
     $id = isset($_POST['id']) ? htmlspecialchars($_POST['id']) : '';
     echo $id;
 
-    $sql = 'DELETE FROM employe WHERE numero_client = ?';
+    $sql = 'DELETE FROM employe WHERE numero_employe = ?';
 
     try {
         $conn = connection();

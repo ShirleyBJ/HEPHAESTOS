@@ -64,7 +64,7 @@ include_once("assets/php/template/template_nav.php");
             <button id="delete-employe">Supprimer un employé</button>
         </section>
         <section id="block_delete--hidden">
-            <form action="assets/php/utils/delete-user.php" method="post">
+            <form action="assets/php/utils/delete-employe.php" method="post">
                 <label for="id">Saisir l'identifiant de l'employé à supprimer</label>
                 <input type="number" name="id" id="id">
                 <button type="submit" id="validate-btn">Valider</button>
