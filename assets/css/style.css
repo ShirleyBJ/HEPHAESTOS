@@ -1190,7 +1190,7 @@ border-bottom: 5px solid red;
     font-weight: bold;
 }
 
-#block--hidden{
+#block_delete--hidden,#block_modify--hidden{
     display: none;
     color: whitesmoke;
 }

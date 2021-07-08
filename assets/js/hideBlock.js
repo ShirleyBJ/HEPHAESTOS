@@ -1,19 +1,33 @@
 //Récuperer elements
 var btnDelete = document.getElementById('delete-employe');
-console.log(btnDelete);
-var blockHidden = document.getElementById('block--hidden');
-console.log(blockHidden);
+var modifyBtn = document.getElementById('modify-employe');
+// console.log(btnDelete);
+var deleteBlockHidden = document.getElementById('block_delete--hidden');
+var modifyBlockHidden = document.getElementById('block_modify--hidden');
+// console.log(deleteBlockHidden);
 var submitBtn = document.getElementById('validate-btn')
-console.log(submitBtn);
+// console.log(submitBtn);
+var hasBeenClick = "";
 
 //Ecouteurs sur les évenements
-btnDelete.addEventListener('click',hideBlock);
+btnDelete.addEventListener('click',deleteBeenCalled);
+modifyBtn.addEventListener('click',modifyBeenCalled);
 
-function hideBlock(){
-    // console.log('Click is working');
-    if (blockHidden.style.display === "none") {
-        blockHidden.style.display = "block";
+function modifyBeenCalled(){
+    if(modifyBlockHidden.style.display === "none") {
+        modifyBlockHidden.style.display = "block";
     } else {
-        blockHidden.style.display = "none";
+        modifyBlockHidden.style.display = "none";
     }
 }
+
+function deleteBeenCalled(){
+    if(deleteBlockHidden.style.display === "none") {
+        deleteBlockHidden.style.display = "block";
+    } else {
+        deleteBlockHidden.style.display = "none";
+    }
+}
+
+
+

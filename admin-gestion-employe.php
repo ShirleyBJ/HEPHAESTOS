@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("assets/php/template/template_top.php");
-include("assets/php/template/template_nav.php");
+include_once("assets/php/template/template_top.php");
+include_once("assets/php/template/template_nav.php");
 ?>
 <!--HEADER-->
 <?php  
@@ -60,17 +60,24 @@ include("assets/php/template/template_nav.php");
         <!--SECTION CRUD of table employe-->
         <section class="user-admin__btn-crud">
             <button href="#modal1" class="js-modal"> Ajouter un employé </button>
-            <button class="">Modifier une fiche employé</button>
+            <button id ="modify-employe">Modifier une fiche employé</button>
             <button id="delete-employe">Supprimer un employé</button>
         </section>
-        <section id="block--hidden">
+        <section id="block_delete--hidden">
             <form action="assets/php/utils/delete-user.php" method="post">
-                <label for="id">Saisir l'indentifiant de l'employé à supprimer</label>
+                <label for="id">Saisir l'identifiant de l'employé à supprimer</label>
                 <input type="number" name="id" id="id">
                 <button type="submit" id="validate-btn">Valider</button>
             </form>
         </section>
-        <!--MODAL BOX - AJAX-->
+        <section id="block_modify--hidden">
+            <form action="" method="post">
+                <label for="id">Saisir l'identifiant de l'employé à modifier</label>
+                <input type="number" name="id" id="id">
+                <button type="submit" id="validate-btn">Valider</button>
+            </form>
+        </section>
+        <!--MODAL BOX - ADD EMPLOYE-->
         <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
             <div class="modal-wrapper js-modal-stop">
                 <button class="js-modal-close link__modal-close"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
@@ -86,6 +93,80 @@ include("assets/php/template/template_nav.php");
                         <option value="Mr">Mr</option>
                     </select required>
                 </div>
+                <div class="user-admin__info--spacing">
+                    <label for="lastName"> Nom : </label>
+                    <input type="text" name="lastName" id="lastName" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="firstName" > Prénom : </label>
+                    <input type="text" name="firstName" id="firstName" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="adress">Adresse : </label required>
+                    <input type="text" name="adress" id="adress" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="CP">CP : </label>
+                    <input type="text" name="CP" id="CP" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="ville">Ville : </label>
+                    <input type="text" name="ville" id="ville" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="tel">Téléphone : </label>
+                    <input type="tel" name="tel" id="tel" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="email">Email : </label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="pswd"> Mot de passe : </label>
+                    <input type="password" name="pswd" id="pswd" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="dob"> Date de naissance </label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="fonction"> Fonction</label>
+                    <input type="text" id="fonction"  name="fonction" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="supérieur"> Supérieur hiérarchique</label>
+                    <select name="superieur" id="supérieur">
+                        <option value="Gérant" selected>Gérant</option>
+                    </select>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="dEmbauche"> Date d'embauche</label>
+                    <input type="date" id="dEmbauche" name="dEmbauche" required>
+                </div>
+                <div class="user-admin__info--spacing">
+                    <label for="dFinContrat"> Date de fin de contrat</label>
+                    <input type="date" id="dFinContrat"  name="dFinContrat">
+                </div>
+                <input type="submit" value="Ajouter">
+            </form>
+            </div>
+        </aside>
+        <!--MODAL BOX - MODIFIY EMPLOYE-->
+        <aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
+            <div class="modal-wrapper js-modal-stop">
+                <button class="js-modal-close link__modal-close"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="logo_interSection">
+                    <h1 class="modal__title">Modifier un employé</h1>
+                </div>
+                <form action="" method="post" id="register" class="admin-create-employe__modal">
+                <div class="user-admin__info--spacing">
+                    <label for ="civilite"> Civilité:</label>
+                    <select name="civilite" id="civilite">
+                        <option value="Choisir" disabled selected>Choisir...</option>
+                        <option value="Mme">Mme</option>
+                        <option value="Mr">Mr</option>
+                    </select required>
+    </div>
                 <div class="user-admin__info--spacing">
                     <label for="lastName"> Nom : </label>
                     <input type="text" name="lastName" id="lastName" required>
