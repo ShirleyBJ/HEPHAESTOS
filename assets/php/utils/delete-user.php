@@ -2,7 +2,6 @@
     session_start();
     include_once('../inc/constants.inc.php');
     include_once('../inc/connection.inc.php');
-
     
 if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
     $mail = $_SESSION['email'];
