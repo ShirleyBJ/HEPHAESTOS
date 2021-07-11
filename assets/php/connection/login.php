@@ -18,17 +18,17 @@ $pass = (isset($_POST['pswd']) && !empty($_POST['email'])) ? htmlspecialchars($_
             $_SESSION['prenom'] = $row['prenom'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['id'] = $row['numero_client'];
-            // var_dump($row);
+            var_dump($row);
             header('location: ../../../user.php');
-        // } elseif($qry->rowCount()=== 0){
-        //     $qry = $conn->prepare('SELECT * FROM employe WHERE email= ? AND mot_de_passe= ?');
-        //     $qry->execute(array($mail,$pass));
-        //     $row = $qry->fetch();
-        //     $_SESSION['prenom'] = $row['prenom'];
-        //     $_SESSION['email'] = $row['email'];
-        //     $_SESSION['id'] = $row['numero_employe'];
-        //     header('location: ../../../user.php');
-        //     // var_dump($row);
+        } elseif($qry->rowCount()=== 0){
+            $qry = $conn->prepare('SELECT * FROM employe WHERE email= ? AND mot_de_passe= ?');
+            $qry->execute(array($mail,$pass));
+            $row = $qry->fetch();
+            $_SESSION['prenom'] = $row['prenom'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['id'] = $row['numero_employe'];
+            header('location: ../../../user.php');
+            var_dump($row);
         } else {
             header('location: ../../../page5.php');
         }

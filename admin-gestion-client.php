@@ -21,11 +21,6 @@ include("assets/php/inc/alert.inc.php");
             if (isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])) {
                 // echo 'Utilisateur connecté';
                 try {
-                    // $conn = new PDO('mysql:host=' . HOST . ';dbname=' . DATA . ';port=' . PORT . ';charset=utf8', USER, PASS);
-                    // // Gestion des attributs de la connexion : exception et retour 
-                    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    // $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
                     //Préparation de la requête : paramétrage pour eviter injection SQL
                     $qry = $conn->prepare('SELECT numero_client,civilite,nom,prenom,adresse,cp,ville,telephone,email
                 FROM client');

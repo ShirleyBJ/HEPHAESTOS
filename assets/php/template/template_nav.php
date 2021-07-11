@@ -31,7 +31,7 @@ include_once('assets/php/inc/constants.inc.php');
                     $row =$qry->fetch();
                     // var_dump($row);
                     if ($row['nb'] == 1) {
-                        $link = "<a href=\"admin.php\"><i class=\"fas fa-user\"></i></a>";
+                        $link = "<a href=\"user.php\"><i class=\"fas fa-user\"></i></a>";
                         echo $link;
                     }else{
                         //Connexion BDD
