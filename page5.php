@@ -12,12 +12,12 @@
     <!--MAIN-->
     <main>
         <section class="block-account">
-            <form action="assets/php/connection/login.php" method="POST"  class="form-account" name="formCo">
+            <form action="assets/php/connection/login.php" method="post"  class="form-account" name="formCo">
                 <h2>Connexion</h2>
                 <label for="email">Identifiant : </label>
                 <input type="text" name="email" id="email" required>
                 <label for="passwd"> Mot de Passe : </label>
-                <input type="password" name="passwd" id="passwd" required>
+                <input type="password" name="pswd" id="pswd" required>
                 <input type="submit" value="Envoyer">
                 <a href="page7.php" class="link__toSuscribe--style"> Pas encore de compte ? Inscrivez-vous ! </a>
             </form>

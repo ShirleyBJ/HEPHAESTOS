@@ -41,7 +41,7 @@ try{
         $sql = 'INSERT INTO client(civilite,nom,prenom,adresse,CP,ville,telephone,email,mot_de_passe) VALUES(?,?,?,?,?,?,?,?,?)';
         $qry = $conn->prepare($sql);
         $qry->execute(array($civilite,$lastName,$firstName,$adress,$cp,$city,$tel,$email,$pswd));
-        // Redirection
+        // // Redirection
         if(isset($_SESSION['email']) && !empty($_SESSION['email'])){
             if($user == 'Employe'){
                 header('location:../../../admin-gestion-client.php');

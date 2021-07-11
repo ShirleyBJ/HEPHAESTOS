@@ -6,7 +6,7 @@
     //Vérifie si utilisateur connecté, sinon redirection vers page connexion
     if(isset($_SESSION['prenom']) && !empty($_SESSION['prenom'])){
     } else{
-        header('location:page5.php');
+        // header('location:page5.php');
     }
 ?>  
 <!--HEADER-->
